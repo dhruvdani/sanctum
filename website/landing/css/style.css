@@ -1716,3 +1716,17 @@ ul.simplefilter {
 	}
 }
 /*-- //responsive --*/
+
+
+/* My CSS -Zena */
+.greys{
+	background: #ececec;
+}
+.whites{
+	background: #fff;
+}
+.whitehover input[type="submit"]:hover{
+	color:#ffffff;
+	border: 2px solid #ffffff;
+	background:none;
+}
