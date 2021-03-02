@@ -28,6 +28,7 @@
 
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
+<script src="js/hmburgerclose.js"></script>
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script type="text/javascript">
@@ -67,13 +68,13 @@
 							<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 								<nav>
 									<ul class="nav navbar-nav">
-										<li class="active"><a href="index.html">Home</a></li>
-										<li><a href="#about" class="scroll">About</a></li>
-										<li><a href="#gallery" class="scroll">Scoreboard</a></li>
-										<li><a href="#team" class="scroll">Team</a></li>
+										<li class="active"><a href="index.html" >Home</a></li>
+										<li><a href="#about" class="scroll" onclick="$('.navbar-toggle').click();">About</a></li>
+										<li><a href="#gallery" class="scroll" onclick="$('.navbar-toggle').click();">Scoreboard</a></li>
+										<li><a href="#team" class="scroll" onclick="$('.navbar-toggle').click();">Team</a></li>
 										<!-- <li><a href="#blog" class="scroll">Tournament</a></li> -->
-										<li><a href="#mail" class="scroll">Feedback</a></li>
-										<li><a href="#" class="scroll" data-toggle="modal" data-target="#myModal">Log In</a></li>
+										<li><a href="#mail" class="scroll" onclick="$('.navbar-toggle').click();">Feedback</a></li>
+										<li><a href="#" class="scroll" data-toggle="modal" data-target="#myModal" onclick="$('.navbar-toggle').click();">Log In</a></li>
 									</ul>
 								</nav>
 							</div>
@@ -892,8 +893,9 @@
 				<!-- <div class="modal-body"> -->
 					<!-- <div class="agileits-w3layouts-info"> -->
 						<div class="login-wrap modal-dialog">
+							
 							<div class="login-html">
-								<button type="button" class="close" data-dismiss="modal" style="color:white">&times;</button>
+								<button type="submit" class="close" data-dismiss="modal" style="font-size:2em;color:white;opacity:0.5;margin-top:0;padding-top:0;">&times;</button>
 								<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
 								<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
 								<div class="login-form">
