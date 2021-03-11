@@ -2,7 +2,7 @@
 -- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3308
+-- Host: 127.0.0.1:3306
 -- Generation Time: Mar 10, 2021 at 07:55 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.12
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `administrator` (
   `ADMIN_PROFILE_PHOTO` varchar(200) NOT NULL,
   `ADMIN_RECOVERY_PIN` int(6) NOT NULL,
   PRIMARY KEY (`ADMIN_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `administrator`
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `CLIENT_SANCTUM_TOKEN` int(11) NOT NULL,
   `CLIENT_TOTAL_SCORE` bigint(20) NOT NULL,
   PRIMARY KEY (`CLIENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `client`
@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   `feedback_contact` varchar(20) NOT NULL,
   `feedback_message` text NOT NULL,
   PRIMARY KEY (`feedback_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `feedback`
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `game` (
   `GAME_PROFILE_IMAGE` varchar(200) NOT NULL,
   `GAME_CATEGORY` varchar(50) NOT NULL,
   PRIMARY KEY (`GAME_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `game`
@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `result` (
   PRIMARY KEY (`RESULT_ID`),
   KEY `CLIENT_ID` (`CLIENT_ID`),
   KEY `TOURNAMENT_ID` (`TOURNAMENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `result`
@@ -175,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `scoreboard` (
   KEY `CLIENT_ID` (`CLIENT_ID`),
   KEY `GAME_ID` (`GAME_ID`),
   KEY `TOURNAMENT_ID` (`TOURNAMENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `scoreboard`
@@ -209,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `tournament` (
   `TOURNAMENT_TREMS` text NOT NULL,
   `TOURNAMENT_REGISTRATION_TILL` date NOT NULL,
   PRIMARY KEY (`TOURNAMENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `tournament`
