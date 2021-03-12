@@ -1,7 +1,11 @@
 <?php
     $title="Admin Profile";
-    require('header.php');
-   
+    require('header.php'); 
+
+    $query="SELECT * FROM administrator where ADMIN_ID = ".$_SESSION['admin_id'].";";
+    $result=mysqli_query($conn,$query);
+    $row=mysqli_fetch_array($result);
+
 ?>
 
    <!-- <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' rel='stylesheet'> -->
@@ -116,7 +120,7 @@
                         </div> -->
                         <div class="row mt-3">
                             <div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control" placeholder="Enter name" value=""></div>
-                            <div class="col-md-12"><label class="labels" style="display:block;">Username</label><input type="text" class="form-control" placeholder="Enter name" style="width:90%;display:inline-block" value=""><span> .admin</span></div>
+                            <div class="col-md-12"><label class="labels" style="display:block;margin-top:2%;">Username</label><input type="text" class="form-control" placeholder="Enter name" style="width:90%;display:inline-block" value=""><span> .admin</span></div>
                             <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="Enter email id" value=""></div>
                             <div class="col-md-12"><label class="labels">Contact Number</label><input type="text" class="form-control" placeholder="Enter phone number" value=""></div>
                             <div class="col-md-12"><label class="labels">Alternate Number</label><input type="text" class="form-control" placeholder="Enter alternate number" value=""></div>

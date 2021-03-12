@@ -1,11 +1,16 @@
 ﻿<?php
-	$dbhost ="localhost";
-	$dbusername="root";	
-	$dbpassword="";
-	$dbname="sanctum_db";
-	
-
-	$conn=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname) or die(" CONNECTION FAILED! ");	
+    require('../backend assets/connection.php');
+    
+    session_start();
+    if(!isset($_SESSION['admin_name']))
+    {
+        header('location:../index.php');
+    }
+    else
+    {
+        $admin_name=$_SESSION['admin_name'];
+        $admin_profile=$_SESSION['admin_profile_photo'];
+    }
 ?>	
 <!DOCTYPE html>
 <html lang="en">
@@ -37,10 +42,6 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
-<?php
-    $admin_name="Zaneta Z. Bhagwagar";
-    $admin_profile="img/undraw_profile.svg";
-?>
 
                 
 <body id="page-top" class="text-white" style="background-color:black">
