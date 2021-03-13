@@ -11,7 +11,7 @@
         $admin_name=$_SESSION['admin_name'];
         $admin_profile=$_SESSION['admin_profile_photo'];
     }
-?>	
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +23,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <title>Sanctum - <?php echo $title ?></title>
+    <title>Sanctum - <?php echo $title;?></title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -203,7 +203,7 @@
                                 <i class="fas fa-caret-down text-white"></i>&emsp;
                                 <span class="mr-2 d-none d-lg-inline small text-white"><?php echo $admin_name?></span>
                                 <img class="img-profile rounded-circle"
-                                    src=<?php echo $admin_profile ?>>
+                                    src=<?php echo $admin_profile; ?>>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right background-color:#00000048;animated--grow-in" aria-labelledby="userDropdown">
