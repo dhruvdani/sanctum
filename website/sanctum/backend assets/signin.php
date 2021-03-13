@@ -10,12 +10,21 @@
 
     if(strtolower(substr($user,strlen($user)-6,6)) == ".admin")
     {
-        $query="select * from administrator where ADMIN_NAME ='".$user."' AND ADMIN_PASSWORD = '".$password."';";
+        $query="select * from administrator where ADMIN_USERNAME ='".$user."' AND ADMIN_PASSWORD = '".$password."';";
         $result=mysqli_query($conn,$query);
         if($result->num_rows > 0)
         {
             //start session and redirect to dashboard
-            echo "admin success";
+
+            $row=mysqli_fetch_array($result);
+            
+            session_start();
+            $_SESSION['admin_name']=$row['ADMIN_NAME'];
+            $_SESSION['admin_email']=$row['ADMIN_EMAIL'];
+            $_SESSION['admin_profile_photo']=$row['ADMIN_PROFILE_PHOTO'];
+            $_SESSION['admin_id']=$row['ADMIN_ID'];
+            
+            header('location:../admin/index.php');
         }
         else
         {

@@ -138,7 +138,7 @@
                         where 
                         s.CLIENT_ID = c.CLIENT_ID 
                         AND s.TOURNAMENT_ID = t.TOURNAMENT_ID 
-                        AND s.TOURNAMENT_ID = ".(int)$tournament_id." group by s.CLIENT_ID;";
+                        AND s.TOURNAMENT_ID = ".(int)$tournament_id." group by s.CLIENT_ID order by SCORE_TOTAL DESC;";
 
 
             $result=mysqli_query($conn,$query);
