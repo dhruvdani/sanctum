@@ -6,7 +6,7 @@
     </div>
 
     
-    <footer class="sticky-footer" style="background-color:#41011249;">
+    <footer class="sticky-footer" style="color:#B46617;font-weight:bold;background-color:white;">
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
                 <span>Copyright &copy; Sanctum 2021</span>

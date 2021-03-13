@@ -68,7 +68,7 @@
 
    <!-- <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' rel='stylesheet'> -->
   
-    <style>
+        <style>
             /* .snippet-body {
                 background:#4e1d3c;
                 color:white;
@@ -100,22 +100,17 @@
                 box-shadow: none
             }
     
-            /* .back:hover {
-                color: #682773;
-                cursor: pointer
-            } */
-    
             .labels {
                 font-size: 11px;
             }
 
             .round{
                 /* glass effect */
-                background: linear-gradient(0deg, rgba(255,0,67,0.25) 0%, rgba(0,0,0,0.5692493567306004) 100%);
+                /* background: linear-gradient(0deg, rgba(255,0,67,0.25) 0%, rgba(0,0,0,0.5692493567306004) 100%); */
 
                 /* background-color:rgba(43, 0, 44, 0.35); */
-                /* background-color:#00000088; */
-                color:white;
+                background-color:#6E9673;
+                color:#261903;
                 
             }
             .imgs{
@@ -147,9 +142,9 @@
                 width: 50px;
                 cursor: pointer;
                 border: 2px solid bisque;
-                background-color:#431f7e;
+                background-color:#ffbb02;
             }
-            </style>
+        </style>
        
     <div class='snippet-body container-fluid' >
     
@@ -181,11 +176,12 @@
                 <div class="col-md-7 ">
                     <div class="p-3 py-5">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4 class="text-right">Profile Settings</h4>
+                            <h4 class="text-right font-weight-bold">Profile Settings</h4>
                         </div>
                         <!-- <div class="row mt-2">
                             <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div> 
                         </div> -->
+<<<<<<< Updated upstream
                         <form method="POST">
                             <div class="row mt-3">
                                 <div class="col-md-12"><label class="labels">Name</label><input name="admin_name" type="text" class="form-control" placeholder="Enter name" value="<?php echo $row['ADMIN_NAME']?>"></div>
@@ -200,6 +196,20 @@
                             <div class="mt-5 w-100 text-center"><button class="btn w-100" style="background-color:#431f7e;color:white" name="save" type="submit">Save Profile</button>
                             </div> 
                         </form>
+=======
+                        <div class="row mt-3">
+                            <div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control" placeholder="Enter name" value=""></div>
+                            <div class="col-md-12"><label class="labels" style="display:block;margin-top:2%;">Username</label><input type="text" class="form-control" placeholder="Enter name" style="width:90%;display:inline-block" value=""><span> .admin</span></div>
+                            <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="Enter email id" value=""></div>
+                            <div class="col-md-12"><label class="labels">Contact Number</label><input type="text" class="form-control" placeholder="Enter phone number" value=""></div>
+                            <div class="col-md-12"><label class="labels">Alternate Number</label><input type="text" class="form-control" placeholder="Enter alternate number" value=""></div>
+                            <div class="col-md-12"><label class="labels">Bio</label><input type="textarea" class="form-control" placeholder="Bio" value=""></div>
+                            <div class="col-md-12"><label class="labels">Recovery Pin</label><input type="text" class="form-control" placeholder="Security Pin" value=""></div>
+                        </div>
+                        
+                        <div class="mt-5 w-100 text-center"><button class="btn w-100" style="background-color:#FFBB02;color:white" type="button">Save Profile</button>
+                        </div> 
+>>>>>>> Stashed changes
                     </div>
                 </div>
                 <!-- <div class="col-md-4">

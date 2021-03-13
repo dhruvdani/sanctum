@@ -1,4 +1,5 @@
 ﻿<?php
+<<<<<<< Updated upstream
     require('../backend assets/connection.php');
     
     session_start();
@@ -12,6 +13,24 @@
         $admin_profile=$_SESSION['admin_profile_photo'];
     }
 ?>
+=======
+    // require('../backend assets/connection.php');
+    require('connection.php');
+    // session_start();
+    // if(!isset($_SESSION['admin_name']))
+    // {
+    //     header('location:../index.php');
+    // }
+    // else
+    // {
+    //     $admin_name=$_SESSION['admin_name'];
+        $admin_name="Zaneta Bhagwagar";
+    //     $admin_profile=$_SESSION['admin_profile_photo'];
+        $admin_profile="https://lh3.googleusercontent.com/proxy/8j1htNXLdhs0a6azLR469jExaBXD8zoT-VSp60t8d3yeUbN7xpsZ_s5x0S6WLSGQEhQf2k4KRMLFBvC0_LjlXX-KdRO3WfXoaORycuripnL_-kcxzpya";
+    // }
+
+?>	
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,16 +63,16 @@
 </head>
 
                 
-<body id="page-top" class="text-white" style="background-color:black">
+<body id="page-top" class="text-white" style="background-color:#0C3A2D">
     
     <!-- Page Wrapper -->
     <div id="wrapper" >
 
         <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion " style="background:linear-gradient(0deg, rgba(176,2,48,0.25) 0%, rgba(0,0,0,1) 100%);" id="accordionSidebar">
+        <ul class="navbar-nav sidebar sidebar-dark accordion " style="background-color:#D77A1D" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.html">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.php">
                     <div class="sidebar-brand-icon rotate-n-15">
                         <i class="fas fa-laugh-wink"></i>
                     </div>
@@ -83,13 +102,6 @@
                         <i class="fas fa-fw fa-user"></i>
                         <span>Clients</span>
                     </a>
-                    <!-- <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Custom Components:</h6>
-                            <a class="collapse-item" href="buttons.html">Buttons</a>
-                            <a class="collapse-item" href="cards.html">Cards</a>
-                        </div>
-                    </div> -->
                 </li>
 
             <!-- Nav Item - trans details -->
@@ -98,26 +110,7 @@
                         <i class="fas fa-fw fa-credit-card"></i>
                         <span>Transaction Details</span>
                     </a>
-                    <!-- <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Custom Utilities:</h6>
-                            <a class="collapse-item" href="utilities-color.html">Colors</a>
-                            <a class="collapse-item" href="utilities-border.html">Borders</a>
-                            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a class="collapse-item" href="utilities-other.html">Other</a>
-                        </div>
-                    </div> -->
                 </li>
-
-            <!-- Nav Item - newsletter -->
-                
-                    <!-- <li class="nav-item">
-                <a class="nav-link " href="#" >
-                        <i class="fas fa-fw fa-newspaper"></i>
-                        <span>Newsletter</span>
-                    </a>
-                </li> -->
 
             <!-- Nav Item - Feedback -->
                 <li class="nav-item">
@@ -129,9 +122,6 @@
             
             <!-- Divider -->
             <hr class="sidebar-divider">
-
-            <!-- Heading -->
-                <!-- <div class="sidebar-heading">Tournament</div> -->
 
             <!-- Nav Item - tournament Menu -->
                 <li class="nav-item">
@@ -179,22 +169,23 @@
         <!-- 0deg, #ff0043 0%, #000000 100% -->
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column" style="background-color:black; ">
+        <div id="content-wrapper" class="d-flex flex-column" style="background-color:#0C3A2D; ">
         <!-- rgb(255, 0, 85); -->
             <!-- Main Content -->
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand topbar mb-4 static-top shadow" style="background-color:#41011249;color:white;">
+                <nav class="navbar navbar-expand topbar mb-4 static-top shadow" style="background-color:white;color:#B46617;">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars text-white"></i>
+                        <i class="fa fa-bars" style="#B36618"></i>
                     </button>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
+<<<<<<< Updated upstream
                     <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
@@ -223,9 +214,40 @@
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-black"></i>
                                     Logout
+=======
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow" >
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-caret-down"style="color:#B36618;"></i>&emsp;
+                                    <span class="mr-2 d-none d-lg-inline small" style="color:#B36618;font-weight:bold"><?php echo $admin_name?></span>
+                                    <img class="img-profile rounded-circle"
+                                        src=<?php echo $admin_profile ?>>
+>>>>>>> Stashed changes
                                 </a>
-                            </div>
-                        </li>
+                                <!-- background-color:#B36618 -->
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right animated--grow-in" aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="admin_profile.php">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-black"></i>
+                                        Profile
+                                    </a>
+                                    <!-- <a class="dropdown-item" href="#">
+                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Settings
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Activity Log
+                                    </a> -->
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-black"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </li>
 
                     </ul>
 
