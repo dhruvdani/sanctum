@@ -75,14 +75,14 @@
                             <div class="table-responsive">
                                 <div class="dropdown">
                                     <button class="btn btn-warning dropdown-toggle" style="float:right;background-color:#ffbb02;border:none;text-align:left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Select Tournament
+                                        <?php echo (isset($_GET['tournament_name']))? $_GET['tournament_name'] :"Select Tournament"; ?>
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <?php
                                         $query_tournament="select * from tournament;";
                                         $data=mysqli_query($conn,$query_tournament);
                                         while($row=mysqli_fetch_array($data))
-                                            echo '<a class="dropdown-item" href=admin_scoreboard.php?tournament_id='.$row["TOURNAMENT_ID"].'>'.$row['TOURNAMENT_NAME'].'</a>';
+                                            echo '<a class="dropdown-item" href=admin_scoreboard.php?tournament_id='.$row["TOURNAMENT_ID"].'&tournament_name='.urlencode($row["TOURNAMENT_NAME"]).'>'.$row["TOURNAMENT_NAME"].'</a>';
                                     ?>
                                     </div>
                                 </div>
