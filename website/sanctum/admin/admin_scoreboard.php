@@ -2,8 +2,19 @@
     $title="Scoreboard";
     require('header.php');
 
-    $sql_view='select * from scoreboard;';
-    $result=mysqli_query($conn,$sql_view);
+    $tournament_id=0;
+    if(isset($_GET['tournament_id']))
+    {
+        $tournament_id=$_GET['tournament_id'];
+    }
+    $query="select c.CLIENT_PROFILE_PHOTO,s.CLIENT_ID,c.CLIENT_NAME,s.TOURNAMENT_ID,sum(s.SCORE_TOTAL)as 'SCORE_TOTAL',c.CLIENT_TOTAL_SCORE from scoreboard as s,
+                        client as c,tournament as t
+                        where 
+                        s.CLIENT_ID = c.CLIENT_ID 
+                        AND s.TOURNAMENT_ID = t.TOURNAMENT_ID 
+                        AND s.TOURNAMENT_ID = ".(int)$tournament_id." group by s.CLIENT_ID order by SCORE_TOTAL DESC;";
+
+    $result=mysqli_query($conn,$query);
     $resultcheck=mysqli_num_rows($result);
     
    
@@ -67,23 +78,27 @@
                                         Select Tournament
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">All</a><hr>
-                                        <a class="dropdown-item" href="#">January 21</a>
-                                        <a class="dropdown-item" href="#">February 21</a>
+                                    <?php
+                                        $query_tournament="select * from tournament;";
+                                        $data=mysqli_query($conn,$query_tournament);
+                                        while($row=mysqli_fetch_array($data))
+                                            echo '<a class="dropdown-item" href=admin_scoreboard.php?tournament_id='.$row["TOURNAMENT_ID"].'>'.$row['TOURNAMENT_NAME'].'</a>';
+                                    ?>
                                     </div>
                                 </div>
                                 <table class="table table-hover" id="dataTable" style="color:#261903;" width="100%" cellspacing="0">
 
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Client_Id</th>
-                                            <th>Game_Id</th>
-                                            <th>Tournament_id</th>
-                                            <th>Score_total</th>
+                                            <th>RANK</th>
+                                            <th>CLIENT ID</th>
+                                            <th>PROFILE</th>
+                                            <th>NAME</th>
+                                            <th>SCORE</th>
+                                            <th>TOTAL SCORE</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
+                                    <!-- <tfoot>
                                         <tr>
                                             <th>ID</th>
                                             <th>Photo</th>
@@ -91,25 +106,23 @@
                                             <th>Tournament_id</th>
                                             <th>Score_total</th>
                                         </tr>
-                                    </tfoot>
+                                    </tfoot> -->
                                     <tbody>
                                         <?php
-                                        if($resultcheck>0){
-                                            while($row=mysqli_fetch_assoc($result)){
-                                                $fetch_id=$row["SCOREBOARD_ID"];
-                                                $fetch_c_id=$row["CLIENT_ID"];
-                                                $fetch_g_id=$row["GAME_ID"];
-                                                $fetch_t_id=$row["TOURNAMENT_ID"];
-                                                $fetch_score=$row["SCORE_TOTAL"];
-
-                                                
-                                                echo"<tr>
-                                                    <td>".$fetch_id."</td>
-                                                    <td>".$fetch_c_id."</td>
-                                                    <td>".$fetch_g_id."</td>
-                                                    <td>".$fetch_t_id."</td>
-                                                    <td>".$fetch_score."</td>
-                                                    </tr>";
+                                        if($resultcheck>0)
+                                        {
+                                            $rank=0;
+                                            while($row=mysqli_fetch_assoc($result))
+                                            {
+                                                ++$rank;
+                                                echo'<tr>
+                                                    <td>'.$rank.'</td>
+                                                    <td>'.$row["CLIENT_ID"].'</td>
+                                                    <td><img style='."height:2.5rem;width:2.5rem;border-radius:50%;".' src="'.$row["CLIENT_PROFILE_PHOTO"].'" ></td>
+                                                    <td>'.$row["CLIENT_NAME"].'</td>
+                                                    <td>'.$row["SCORE_TOTAL"].'</td>
+                                                    <td>'.$row["CLIENT_TOTAL_SCORE"].'</td>
+                                                    </tr>';
                                             }
                                         }
                                         ?>

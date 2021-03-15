@@ -2,6 +2,19 @@
     $title="Clients";
     require('header.php');
 
+    if(isset($_GET['id']) && isset($_GET['current_status']))
+    {
+        if($_GET['current_status'])
+        {
+            $query="update client set CLIENT_STATUS = 0 where CLIENT_ID = ".$_GET['id'];
+        }
+        else
+        {
+            $query="update client set CLIENT_STATUS = 1 where CLIENT_ID = ".$_GET['id'];
+        }
+        mysqli_query($conn,$query);
+    }
+
     $sql_view='select * from client;';
     $result=mysqli_query($conn,$sql_view);
     $resultcheck=mysqli_num_rows($result);
@@ -74,7 +87,7 @@
                                             <!-- <th>Status</th> -->
                                             <th>Total Score</th>
                                             <th>Total Tokens</th>
-                                            <!-- /<th>Delete</th> -->
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <!-- <tfoot>
@@ -107,7 +120,15 @@
 
                                                     /* you can also use this for fetching image from database!!!:
                                                     echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'" height="200" width="200"/>';*/
-                                                        
+                                                    
+                                                    if($fetch_status==1)
+                                                    {
+                                                        $status_button="<a class='btn btn-info btn-sm' href='admin_clients.php?id=".$fetch_id."&current_status=".$fetch_status."'><img src='img/remove.svg'></img></a>";
+                                                    }
+                                                    else
+                                                    {
+                                                        $status_button="<a class='btn btn-danger btn-sm' href='admin_clients.php?id=".$fetch_id."&current_status=".$fetch_status."'><img src='img/add.svg'></img></a>";
+                                                    }
                                                     echo"<tr>
                                                         <td>".$fetch_id."</td>
                                                         <td> <img src='".$fetch_photo."' height='50' width='50' style='border-radius:50%;' /></td>
@@ -117,8 +138,9 @@
                                                         
                                                         <td>".$fetch_score."</td>
                                                         <td>".$fetch_token."</td>
+                                                        <td>".$status_button."</td>
                                                         </tr>";
-                                                        //<td><a class='btn ' href='#'><i class='fa fa-trash text-white' aria-hidden='true'></i></a></td>
+                                                        
                                                         //<td> <input type='checkbox' ". (($fetch_status==1)?"checked":"") ." data-toggle='toggle' data-onstyle='danger' type='submit' data-offstyle='warning'> </td>
                                                 }
                                             }
