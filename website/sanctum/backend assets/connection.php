@@ -11,5 +11,4 @@
     {
         echo '<h1>Connection Failed!!!</h1>';
     }
-
 ?>
