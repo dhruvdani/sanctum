@@ -2,8 +2,8 @@
 -- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Mar 10, 2021 at 07:55 AM
+-- Host: 127.0.0.1:3308
+-- Generation Time: Mar 15, 2021 at 10:33 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.12
 
@@ -38,16 +38,17 @@ CREATE TABLE IF NOT EXISTS `administrator` (
   `ADMIN_MESSAGE` text NOT NULL,
   `ADMIN_PASSWORD` varchar(50) NOT NULL,
   `ADMIN_PROFILE_PHOTO` varchar(200) NOT NULL,
-  `ADMIN_RECOVERY_PIN` int(6) NOT NULL,
+  `ADMIN_USERNAME` varchar(50) NOT NULL,
+  `ADMIN_RECOVERY_PIN` varchar(6) NOT NULL,
   PRIMARY KEY (`ADMIN_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `administrator`
 --
 
-INSERT INTO `administrator` (`ADMIN_ID`, `ADMIN_NAME`, `ADMIN_EMAIL`, `ADMIN_CONTACT_1`, `ADMIN_CONTACT_2`, `ADMIN_MESSAGE`, `ADMIN_PASSWORD`, `ADMIN_PROFILE_PHOTO`, `ADMIN_RECOVERY_PIN`) VALUES
-(1, 'dhruv.admin', 'dhruvbdani@gmail.com', '', '', '', 'dhruv123', '', 12345);
+INSERT INTO `administrator` (`ADMIN_ID`, `ADMIN_NAME`, `ADMIN_EMAIL`, `ADMIN_CONTACT_1`, `ADMIN_CONTACT_2`, `ADMIN_MESSAGE`, `ADMIN_PASSWORD`, `ADMIN_PROFILE_PHOTO`, `ADMIN_USERNAME`, `ADMIN_RECOVERY_PIN`) VALUES
+(1, 'dhruv dani', 'dhruvbdani@gmail.com', '7621999436', '9320099436', 'dhruv is my name', 'dhruv123', '/admin/admin_profile/20181021_004055.jpg', 'dhruv.admin', '12abcd');
 
 -- --------------------------------------------------------
 
@@ -67,17 +68,17 @@ CREATE TABLE IF NOT EXISTS `client` (
   `CLIENT_SANCTUM_TOKEN` int(11) NOT NULL,
   `CLIENT_TOTAL_SCORE` bigint(20) NOT NULL,
   PRIMARY KEY (`CLIENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `client`
 --
 
 INSERT INTO `client` (`CLIENT_ID`, `CLIENT_NAME`, `CLIENT_EMAIL`, `CLIENT_CONTACT`, `CLIENT_PASSWORD`, `CLIENT_STATUS`, `CLIENT_PROFILE_PHOTO`, `CLIENT_SANCTUM_TOKEN`, `CLIENT_TOTAL_SCORE`) VALUES
-(1, 'DHRUV DANI', 'DHRUVBDANI@GMAIL.COM', '7621999436', 'dhruv@2000', 1, 'backend assets\\images\\favicon.ico', 0, 200),
+(1, 'DHRUV DANI', 'DHRUVBDANI@GMAIL.COM', '7621999436', 'dhruv@2000', 0, '\\backend assets\\images\\favicon.ico', 0, 200),
 (2, 'ZANETA BHAGWAGAR', 'ZANETABHAGWAGAR@GMAIL.COM', '98765432S1', 'Z', 1, 'https://www.searchpng.com/wp-content/uploads/2019/02/Men-Profile-Image-715x657.png', 0, 0),
 (3, 'NILAY', 'NILAY@GMAIL.COM', '98765432S1', 'NILAY', 1, 'https://www.searchpng.com/wp-content/uploads/2019/02/Men-Profile-Image-715x657.png', 0, 0),
-(5, 'alpha', 'ALPHA@GMAIL.COM', '', 'alpha', 1, 'backend assets/images/favicon.ico', 0, 0);
+(5, 'alpha', 'ALPHA@GMAIL.COM', '', 'alpha', 1, '\\backend assets\\images\\favicon.ico', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -87,21 +88,23 @@ INSERT INTO `client` (`CLIENT_ID`, `CLIENT_NAME`, `CLIENT_EMAIL`, `CLIENT_CONTAC
 
 DROP TABLE IF EXISTS `feedback`;
 CREATE TABLE IF NOT EXISTS `feedback` (
-  `feedback_id` int(11) NOT NULL AUTO_INCREMENT,
-  `feedback_name` varchar(50) NOT NULL,
-  `feedback_email` varchar(50) NOT NULL,
-  `feedback_contact` varchar(20) NOT NULL,
-  `feedback_message` text NOT NULL,
-  PRIMARY KEY (`feedback_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 ;
+  `FEEDBACK_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `FEEDBACK_NAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `FEEDBACK_EMAIL` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `FEEDBACK_CONTACT` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `FEEDBACK_MESSAGE` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `FEEDBACK_TIME` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`FEEDBACK_ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `feedback`
 --
 
-INSERT INTO `feedback` (`feedback_id`, `feedback_name`, `feedback_email`, `feedback_contact`, `feedback_message`) VALUES
-(1, 'dhruv', 'dhruvbdani@gmail.com', 'd', 'hi'),
-(2, 'd', 's@gmail.com', '', 'sdsdsdsd');
+INSERT INTO `feedback` (`FEEDBACK_ID`, `FEEDBACK_NAME`, `FEEDBACK_EMAIL`, `FEEDBACK_CONTACT`, `FEEDBACK_MESSAGE`, `FEEDBACK_TIME`) VALUES
+(1, 'dhruv', 'dhruvbdani@gmail.com', 'd', 'hi', '2021-03-14 21:24:08'),
+(2, 'd', 's@gmail.com', '', 'sdsdsdsd', '2021-03-14 21:24:08'),
+(3, 'dani dhruv', 'dhruvbdani@gmail.com', '', 'this is a latest feedback', '2021-03-14 21:28:29');
 
 -- --------------------------------------------------------
 
@@ -118,15 +121,15 @@ CREATE TABLE IF NOT EXISTS `game` (
   `GAME_PROFILE_IMAGE` varchar(200) NOT NULL,
   `GAME_CATEGORY` varchar(50) NOT NULL,
   PRIMARY KEY (`GAME_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `game`
 --
 
 INSERT INTO `game` (`GAME_ID`, `GAME_NAME`, `GAME_STATUS`, `GAME_DESCRIPTION`, `GAME_PROFILE_IMAGE`, `GAME_CATEGORY`) VALUES
-(1, 'DUMMY GAME', 1, 'THIS IS A DUMMY GAME CREATED FOR TESTING AND CHECKING THE FUNCTIONALITY OF BACKED CONNECTION. -DHRUV DANI', 'images\\favicon.ico', 'DUMMY'),
-(2, 'DUMMY GAME 2', 1, 'THIS IS ANOTHER GAME!!!<BR>\r\nOKAY!!!!!!', 'images\\HastiJlogo.png', 'DUMMY');
+(1, 'DUMMY GAME', 1, 'THIS IS A DUMMY GAME CREATED FOR TESTING AND CHECKING THE FUNCTIONALITY OF BACKED CONNECTION. -DHRUV DANI', '\\backend assets\\images\\favicon.ico', 'DUMMY'),
+(2, 'DUMMY GAME 2', 1, 'THIS IS ANOTHER GAME!!!<BR>\r\nOKAY!!!!!!', '\\backend assets\\images\\HastiJlogo.png', 'DUMMY');
 
 -- --------------------------------------------------------
 
@@ -144,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `result` (
   PRIMARY KEY (`RESULT_ID`),
   KEY `CLIENT_ID` (`CLIENT_ID`),
   KEY `TOURNAMENT_ID` (`TOURNAMENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `result`
@@ -175,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `scoreboard` (
   KEY `CLIENT_ID` (`CLIENT_ID`),
   KEY `GAME_ID` (`GAME_ID`),
   KEY `TOURNAMENT_ID` (`TOURNAMENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `scoreboard`
@@ -185,7 +188,13 @@ INSERT INTO `scoreboard` (`SCOREBOARD_ID`, `CLIENT_ID`, `GAME_ID`, `TOURNAMENT_I
 (1, 1, 1, 1, 50),
 (2, 1, 2, 1, 100),
 (3, 1, 1, 2, 50),
-(4, 3, 1, 1, 1000);
+(4, 3, 1, 1, 1000),
+(5, 1, 1, 1, 5000),
+(6, 1, 1, 1, 5000),
+(7, 3, 1, 1, 4000),
+(8, 2, 1, 1, 6000),
+(9, 2, 1, 1, 5000),
+(10, 3, 1, 1, 7000);
 
 -- --------------------------------------------------------
 
@@ -209,7 +218,7 @@ CREATE TABLE IF NOT EXISTS `tournament` (
   `TOURNAMENT_TREMS` text NOT NULL,
   `TOURNAMENT_REGISTRATION_TILL` date NOT NULL,
   PRIMARY KEY (`TOURNAMENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tournament`
