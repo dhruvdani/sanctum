@@ -13,6 +13,7 @@
     {
         header('location:../index.php');
     }
+    
 
     function save_feedback_data($name,$email,$message,$contact="")
     {

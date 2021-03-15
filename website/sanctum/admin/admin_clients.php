@@ -71,13 +71,13 @@
                                             <th>Name</th>
                                             <th>Mail</th>
                                             <th>Contact</th>
-                                            <th>Status</th>
+                                            <!-- <th>Status</th> -->
                                             <th>Total Score</th>
                                             <th>Total Tokens</th>
-                                            <th></th>
+                                            <!-- /<th>Delete</th> -->
                                         </tr>
                                     </thead>
-                                    <tfoot>
+                                    <!-- <tfoot>
                                         <tr>
                                             <th>ID</th>
                                             <th>Photo</th>
@@ -89,37 +89,40 @@
                                             <th>Total Tokens</th>
                                             <th></th>
                                         </tr>
-                                    </tfoot>
-                                    <tbody>
+                                    </tfoot> -->
+                                    <tbody><form method="post">
                                         <?php
-                                        if($resultcheck>0){
-                                            while($row=mysqli_fetch_assoc($result)){
-                                                $fetch_id=$row["CLIENT_ID"];
-                                                $fetch_name=$row["CLIENT_NAME"];
-                                                $fetch_photo=$row["CLIENT_PROFILE_PHOTO"];
-                                                $fetch_mail=$row["CLIENT_EMAIL"];
-                                                $fetch_contact=$row["CLIENT_CONTACT"];
-                                                $fetch_status=$row["CLIENT_STATUS"];
-                                                $fetch_score=$row["CLIENT_TOTAL_SCORE"];
-                                                $fetch_token=$row["CLIENT_SANCTUM_TOKEN"];
+                                            if($resultcheck>0)
+                                            {
+                                                while($row=mysqli_fetch_assoc($result))
+                                                {
+                                                    $fetch_id=$row["CLIENT_ID"];
+                                                    $fetch_name=$row["CLIENT_NAME"];
+                                                    $fetch_photo=$row["CLIENT_PROFILE_PHOTO"];
+                                                    $fetch_mail=$row["CLIENT_EMAIL"];
+                                                    $fetch_contact=$row["CLIENT_CONTACT"];
+                                                    $fetch_status=$row["CLIENT_STATUS"];
+                                                    $fetch_score=$row["CLIENT_TOTAL_SCORE"];
+                                                    $fetch_token=$row["CLIENT_SANCTUM_TOKEN"];
 
-                                                /* you can also use this for fetching image from database!!!:
-                                                 echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'" height="200" width="200"/>';*/
-                                                    
-                                                echo"<tr>
-                                                    <td>".$fetch_id."</td>
-                                                    <td> <img src=".$fetch_photo." height='50' width='50' style='border-radius:50%;' /></td>
-                                                    <td>".$fetch_name."</td>
-                                                    <td>".$fetch_mail."</td>
-                                                    <td>".$fetch_contact."</td>
-                                                    <td> <input type='checkbox' checked data-toggle='toggle' data-onstyle='danger' data-offstyle='warning'> </td>
-                                                    <td>".$fetch_score."</td>
-                                                    <td>".$fetch_token."</td>
-                                                    <td><a class='btn ' href='#'><i class='fa fa-trash text-white' aria-hidden='true'></i></a></td>
-                                                    </tr>";
+                                                    /* you can also use this for fetching image from database!!!:
+                                                    echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'" height="200" width="200"/>';*/
+                                                        
+                                                    echo"<tr>
+                                                        <td>".$fetch_id."</td>
+                                                        <td> <img src='".$fetch_photo."' height='50' width='50' style='border-radius:50%;' /></td>
+                                                        <td>".$fetch_name."</td>
+                                                        <td>".$fetch_mail."</td>
+                                                        <td>".$fetch_contact."</td>
+                                                        
+                                                        <td>".$fetch_score."</td>
+                                                        <td>".$fetch_token."</td>
+                                                        </tr>";
+                                                        //<td><a class='btn ' href='#'><i class='fa fa-trash text-white' aria-hidden='true'></i></a></td>
+                                                        //<td> <input type='checkbox' ". (($fetch_status==1)?"checked":"") ." data-toggle='toggle' data-onstyle='danger' type='submit' data-offstyle='warning'> </td>
+                                                }
                                             }
-                                        }
-                                        ?>
+                                            ?></form>
                                     </tbody>
                                     <!-- <td><a class='btn' href='#'><i class='fa fa-edit text-white' aria-hidden='true'></i></a></td> -->
 

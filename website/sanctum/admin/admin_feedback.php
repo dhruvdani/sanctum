@@ -88,14 +88,16 @@
                                     </tfoot>
                                     <tbody>
                                         <?php
-                                        if($resultcheck>0){
-                                            while($row=mysqli_fetch_assoc($result)){
-                                                $fetch_id=$row["feedback_id"];
-                                                $fetch_name=$row["feedback_name"];
-                                                $fetch_mail=$row["feedback_email"];
-                                                $fetch_contact=$row["feedback_contact"];
-                                                $fetch_time=$row["feedback_time"];
-                                                $fetch_message=$row["feedback_message"];
+                                        if($resultcheck>0)
+                                        {
+                                            while($row=mysqli_fetch_array($result))
+                                            {
+                                                $fetch_id=$row["FEEDBACK_ID"];
+                                                $fetch_name=$row["FEEDBACK_NAME"];
+                                                $fetch_mail=$row["FEEDBACK_EMAIL"];
+                                                $fetch_contact=$row["FEEDBACK_CONTACT"];
+                                                $fetch_time=$row["FEEDBACK_TIME"];
+                                                $fetch_message=$row["FEEDBACK_MESSAGE"];
 
                                                 
                                                 echo"

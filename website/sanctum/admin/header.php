@@ -1,18 +1,16 @@
 ﻿<?php
     // require('../backend assets/connection.php');
     require('connection.php');
-    // session_start();
-    // if(!isset($_SESSION['admin_name']))
-    // {
-    //     header('location:../index.php');
-    // }
-    // else
-    // {
-    //     $admin_name=$_SESSION['admin_name'];
-        $admin_name="Zaneta Bhagwagar";
-    //     $admin_profile=$_SESSION['admin_profile_photo'];
-        $admin_profile="https://lh3.googleusercontent.com/proxy/8j1htNXLdhs0a6azLR469jExaBXD8zoT-VSp60t8d3yeUbN7xpsZ_s5x0S6WLSGQEhQf2k4KRMLFBvC0_LjlXX-KdRO3WfXoaORycuripnL_-kcxzpya";
-    // }
+    session_start();
+    if(!isset($_SESSION['admin_name']))
+    {
+        header('location:../index.php');
+    }
+    else
+    {
+        $admin_name=$_SESSION['admin_name'];
+        $admin_profile=$_SESSION['admin_profile_photo'];
+    }
 
 ?>	
 <!DOCTYPE html>
@@ -53,7 +51,7 @@
     <div id="wrapper" >
 
         <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion " style="background-color:#D77A1D" id="accordionSidebar">
+        <ul class="navbar-nav sidebar sidebar-dark accordion " style="background-color:#B46617" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.php">
@@ -177,7 +175,7 @@
                                     <i class="fas fa-caret-down"style="color:#B36618;"></i>&emsp;
                                     <span class="mr-2 d-none d-lg-inline small" style="color:#B36618;font-weight:bold"><?php echo $admin_name?></span>
                                     <img class="img-profile rounded-circle"
-                                        src=<?php echo $admin_profile ?>>
+                                        src=<?php echo $admin_profile; ?>>
                                 </a>
                                 <!-- background-color:#B36618 -->
                                 <!-- Dropdown - User Information -->
