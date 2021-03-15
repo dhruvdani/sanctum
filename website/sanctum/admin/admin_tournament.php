@@ -44,16 +44,69 @@
     }
     select > option{color:white;}
 </style>
-<div class="container-fluid">
+
+<script>
+$("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
+    $(e.target)
+      .prev()
+      .find("i:last-child")
+      .toggleClass("fa-minus fa-plus");
+  });
+</script>
+
+<div class="container-fluid myaccordion" id="accordion">
     <!-- Collapsable Card Example -->
     <div class="card shadow mb-4" style="background-color:transparent">
         <!-- Card Header - Accordion -->
-        <a href="#collapseCardExample" class="d-block bg-transparent card-header py-3" style="border:none" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+        <a href="#collapseCardE" class="d-block bg-transparent card-header py-3" style="border:none" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardE">
             <h6 class="m-0 font-weight-bold text-white" >Add Tournament</h6>
         </a>
         <!-- Card Content - Collapse -->
-        <div class="collapse mb-3" id="collapseCardExample">
-            <div class="card-body container ">
+        <div class="collapse mb-3" id="collapseCardE" data-parent="#accordion">
+            <div class="card-body container " >
+                <div class="row">
+                    <div class="col-xl-12"><label for="t_name">Name </label><input type="text" name="t_name" id="t_name" class="form-control" placeholder="Enter tournament name"/></div>
+                    </div>
+                <div class="row">
+                    <div class="col-xl-6 mt-2"><label for="start_date">Start Date</label><input type="text" name="start_date" id="start_date" class="form-control" placeholder="Enter tournament starting date"/></div>
+                    <div class="col-xl-6 mt-2"><label for="end_date">End Date</label><input type="text" name="end_date" id="end_date" class="form-control" placeholder="Enter tournament ending date"/></div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 mt-2"><label for="r_end_date">Registration end date</label><input type="text" name="r_end_date" id="r_end_date" class="form-control" placeholder="Enter tournament registration end date"/></div>
+                    <div class="col-xl-6 mt-2"><label for="t_status">Status</label><input type="text" name="t_status" id="t_status" class="form-control" placeholder="Enter tournament current status"/></div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 mt-2"><label for="winning_price">Winning prize</label><input type="text" name="winning_price" id="winning_price" class="form-control" placeholder="Enter tournament winning price"/></div>
+                    <div class="col-xl-6 mt-2"><label for="first_price">First prize</label><input type="text" name="first_price" id="first_price" class="form-control" placeholder="Enter tournament winning price"/></div>
+                </div>
+                <div class="row">
+                    
+                    <div class="col-xl-6 mt-2"><label for="second_prize">Second Prize</label><input type="text" name="second_prize" id="second_prize" class="form-control" placeholder="Enter tournament details"/></div>
+                    <div class="col-xl-6 mt-2"><label for="third_price">Third prize</label><input type="text" name="third_price" id="third_price" class="form-control" placeholder="Enter tournament winning price"/></div>
+                </div>
+                <div class="row">
+                    
+                    <div class="col-xl-6 mt-2"><label for="t_details">Details</label><input type="text" name="t_details" id="t_details" class="form-control" placeholder="Enter tournament details"/></div>
+                    <div class="col-xl-6 mt-2"><label for="t_terms">Terms</label><input type="text" name="t_terms" id="t_terms" class="form-control" placeholder="Enter tournament details"/></div>
+                </div>
+                <!-- buttons -->
+                <div class="row mt-4 float-right">
+                    <div><button type="reset" class="btn btn-danger mr-2">Reset</button></div>
+                    <div><button type="submit" class="btn btn-success mr-3 ml-2">Submit</button></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="card shadow mb-4" style="background-color:transparent">
+        <!-- Card Header - Accordion -->
+        <a href="#collapseCardExample" class="d-block bg-transparent card-header py-3" style="border:none" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+            <h6 class="m-0 font-weight-bold text-white" >Edit Tournament</h6>
+        </a>
+        <!-- Card Content - Collapse -->
+        <div class="collapse mb-3" id="collapseCardExample" data-parent="#accordion">
+            <div class="card-body container " >
                 <div class="row">
                     <div class="col-xl-12"><label for="t_name">Name </label><input type="text" name="t_name" id="t_name" class="form-control" placeholder="Enter tournament name"/></div>
                     </div>

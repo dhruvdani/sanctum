@@ -44,7 +44,17 @@
     }
     select > option{color:white;}
 </style>
-<div class="container-fluid">
+
+<script>
+$("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
+    $(e.target)
+      .prev()
+      .find("i:last-child")
+      .toggleClass("fa-minus fa-plus");
+  });
+</script>
+
+<div class="container-fluid myaccordion" id="accordion">
     <!-- Collapsable Card Example -->
     <div class="card shadow mb-4" style="background-color:transparent">
         <!-- Card Header - Accordion -->
@@ -52,27 +62,54 @@
             <h6 class="m-0 font-weight-bold text-white" >Add Game</h6>
         </a>
         <!-- Card Content - Collapse -->
-        <div class="collapse mb-3" id="collapseCardExample">
-            <div class="card-body container ">
-                <div class="row">
-                    <div class="col-xl-12"><label for="g_name">Name </label><input type="text" name="g_name" id="g_name" class="form-control" placeholder="Enter game name"/></div>
-                    </div>
-                <div class="row">
-                    <div class="col-xl-6 mt-2"><label for="g_status">Status</label><input type="text" name="g_status" id="g_status" class="form-control" placeholder="Enter game status"/></div>
-                    <div class="col-xl-6 mt-2"><label for="g_description">Description</label><input type="text" name="g_description" id="g_description" class="form-control" placeholder="Enter game description"/></div>
+        <div class="card-body container collapse mb-3" id="collapseCardExample" data-parent="#accordion">
+
+            <div class="row">
+                <div class="col-xl-12"><label for="g_name">Name </label><input type="text" name="g_name" id="g_name" class="form-control" placeholder="Enter game name"/></div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-6 mt-2"><label for="g_image">Profile Image</label><input type="file" name="g_image" id="g_image" class="form-control"/></div>
-                    <div class="col-xl-6 mt-2"><label for="g_category">Category</label><br><select id="g_category" class="btn " name="g_category"><option value="Cards">Cards</option><option value="quiz">Quiz</option></select></div>
+            <div class="row">
+                <div class="col-xl-6 mt-2"><label for="g_status">Status</label><input type="text" name="g_status" id="g_status" class="form-control" placeholder="Enter game status"/></div>
+                <div class="col-xl-6 mt-2"><label for="g_description">Description</label><input type="text" name="g_description" id="g_description" class="form-control" placeholder="Enter game description"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 mt-2"><label for="g_image">Profile Image</label><input type="file" name="g_image" id="g_image" class="form-control"/></div>
+                <div class="col-xl-6 mt-2"><label for="g_category">Category</label><br><select id="g_category" class="btn " name="g_category"><option value="Cards">Cards</option><option value="quiz">Quiz</option></select></div>
+            </div>
+                <!-- buttons -->
+                <div class="row mt-4 float-right">
+                <div><button type="reset" class="btn btn-danger mr-2">Reset</button></div>
+                <div><button type="submit" class="btn btn-success mr-3 ml-2">Submit</button></div>
+            </div>
+
+        </div>
+
+    </div>
+    
+    <!-- Collapsable Card Example -->
+    <div class="card shadow mb-4" style="background-color:transparent">
+        <!-- Card Header - Accordion -->
+        <a href="#collapseCardE" class="d-block bg-transparent card-header py-3" style="border:none" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardE">
+            <h6 class="m-0 font-weight-bold text-white" >Edit Game</h6>
+        </a>
+        <!-- Card Content - Collapse -->
+        <div class="card-body container collapse mb-3" id="collapseCardE" data-parent="#accordion">
+            <div class="row">
+                <div class="col-xl-12"><label for="g_name">Name </label><input type="text" name="g_name" id="g_name" class="form-control" placeholder="Enter game name"/></div>
                 </div>
-                 <!-- buttons -->
-                 <div class="row mt-4 float-right">
-                    <div><button type="reset" class="btn btn-danger mr-2">Reset</button></div>
-                    <div><button type="submit" class="btn btn-success mr-3 ml-2">Submit</button></div>
-                </div>
+            <div class="row">
+                <div class="col-xl-6 mt-2"><label for="g_status">Status</label><input type="text" name="g_status" id="g_status" class="form-control" placeholder="Enter game status"/></div>
+                <div class="col-xl-6 mt-2"><label for="g_description">Description</label><input type="text" name="g_description" id="g_description" class="form-control" placeholder="Enter game description"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 mt-2"><label for="g_image">Profile Image</label><input type="file" name="g_image" id="g_image" class="form-control"/></div>
+                <div class="col-xl-6 mt-2"><label for="g_category">Category</label><br><select id="g_category" class="btn " name="g_category"><option value="Cards">Cards</option><option value="quiz">Quiz</option></select></div>
+            </div>
+                <!-- buttons -->
+            <div class="row mt-4 float-right">
+                <div><button type="reset" class="btn btn-danger mr-2">Reset</button></div>
+                <div><button type="submit" class="btn btn-success mr-3 ml-2">Submit</button></div>
             </div>
         </div>
-        
     </div>
 </div>  
 <div id="wrapper" ">
@@ -125,7 +162,7 @@
 
                                             echo"<tr>
                                                 <td>".$fetch_id."</td>
-                                                <td> <img src='".$fetch_profile_image."' height='50' width='50' style='border-radius:50% ;' /></td>                                
+                                                <td> <img src=".$fetch_profile_image." height='50' width='50' style='border-radius:50% ;' /></td>                                
                                                 <td>".$fetch_name."</td>
                                                 <td>".$fetch_status."</td>
                                                 <td>".$fetch_description."</td>
