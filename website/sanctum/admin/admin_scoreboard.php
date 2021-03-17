@@ -89,8 +89,8 @@
                                 <table class="table table-hover" id="dataTable" style="color:#261903;" width="100%" cellspacing="0">
 
                                     <thead>
-                                        <tr>
-                                            <th>RANK</th>
+                                        <tr>                                           
+                                             <th>RANK</th>
                                             <th>CLIENT ID</th>
                                             <th>PROFILE</th>
                                             <th>NAME</th>
