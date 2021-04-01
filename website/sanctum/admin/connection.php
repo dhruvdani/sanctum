@@ -5,7 +5,7 @@
     $username='root';
     $port='3308';
 
-    $conn=mysqli_connect($host,$username,$password,$database,$port);
+    $conn=mysqli_connect($host,$username,$password,$database);
 
     if(!$conn)
     {

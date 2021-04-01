@@ -181,7 +181,7 @@ $("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
 
             <div class="card-body container " >
                 <div class="row">
-                    <div class="col-xl-1 "><label for="t_name">Id </label><input required="true" type="text" name="tournament_id" id="t_id" class="form-control" placeholder="" value="<?php echo $id;?>"/></div>
+                    <div class="col-xl-1 "><label for="t_name">Id </label><input required="true" type="text" name="tournament_id" id="t_id" class="form-control" placeholder="" value="<?php echo $id;?>" disabled/></div>
                     <div class="col-xl-11 "><label for="t_name">Name </label><input required="true" type="text" name="tournament_name" id="t_name" class="form-control" placeholder="Enter tournament name" value="<?php echo $name;?>"/></div>
                     </div>
                 <div class="row">

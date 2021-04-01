@@ -37,6 +37,8 @@
             scrollbar-width:none;
         }
         body::-webkit-scrollbar{display:none;}
+        .nav-link span,
+        .nav-link .fas{color:#000}
     </style>
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet">
@@ -51,14 +53,14 @@
     <div id="wrapper" >
 
         <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion " style="background-color:#B46617" id="accordionSidebar">
-
+        <ul class="navbar-nav sidebar sidebar-dark accordion " style="background-color:#E48F3A" id="accordionSidebar">
+        <!-- B46617 -->
             <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.php">
-                    <div class="sidebar-brand-icon rotate-n-15">
-                        <i class="fas fa-laugh-wink"></i>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center " href="../index.php">
+                    <div class="">
+                        <img src="\sanctum\images\logo.png" width=45rem height=25rem>
                     </div>
-                    <div class="sidebar-brand-text mx-3">Sanctum</div>
+                    <div class="sidebar-brand-text mx-3" style="color:white">Sanctum</div>
                 </a>
 
             <!-- Divider -->
