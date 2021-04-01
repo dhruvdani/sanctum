@@ -464,12 +464,12 @@
 					<div class="team-info">
 						<img src="images/t2.jpg" alt="">
 						<div class="team-caption"> 
-							<h4>Johan Botha</h4>
-							<p>Fusce laoreet</p>
+							<h4>Dhruv Dani</h4>
+							<!-- <p>Fusce laoreet</p> -->
 							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss"></i></a></li>
+								<li><a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+								<!-- <li><a href=""><i class="fa fa-linkedin-in"></i></a></li> -->
 							</ul>
 						</div>
 					</div>
@@ -478,12 +478,12 @@
 					<div class="team-info">
 						<img src="images/t3.jpg" alt="">
 						<div class="team-caption"> 
-							<h4>Justo Congue</h4>
-							<p>Fusce laoreet</p>
+							<h4>Zaneta Bhagwagar</h4>
+							<!-- <p>Fusce laoreet</p> -->
 							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss"></i></a></li>
+								<!-- <li><a href="#"><i class="fa fa-rss"></i></a></li> -->
 							</ul>
 						</div>
 					</div>
@@ -492,12 +492,12 @@
 					<div class="team-info">
 						<img src="images/t4.jpg" alt="">
 						<div class="team-caption"> 
-							<h4>Steven Wilson</h4>
-							<p>Fusce laoreet</p>
+							<h4>Nilay Thakkar</h4>
+							<!-- <p>Fusce laoreet</p> -->
 							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss"></i></a></li>
+								<!-- 	 -->
 							</ul>
 						</div>
 					</div>
