@@ -58,7 +58,7 @@
             <!-- Sidebar - Brand -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center " href="../index.php">
                     <div class="">
-                        <img src="\sanctum\images\logo.png" width=45rem height=25rem>
+                        <img src="\images\logo.png" width=45rem height=25rem>
                     </div>
                     <div class="sidebar-brand-text mx-3" style="color:white">Sanctum</div>
                 </a>

@@ -107,7 +107,7 @@
 										</li>-->
 										<!-- <li> -->
 											<div class="banner_text">
-												<img src="\sanctum\images\logo.png" width=25%>
+												<img src="images\logo.png" width=25%>
 												<p></p>
 												<div class="w3-button">
 													<a href="#footer" class="scroll"> Download Mobile App</a>
