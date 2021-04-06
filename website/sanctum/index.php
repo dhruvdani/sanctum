@@ -229,8 +229,8 @@
 							<i class="fa fa-gamepad" aria-hidden="true"></i>
 						</div>
 						<div class="icon-right">
-							<h5>Suspendisse</h5>
-							<p>Phasellus dapibus felis elit, sed accumsan arcu gravida vitae. Nullam aliquam erat at lectus ullamcorper, nec interdum neque hendrerit.</p>
+							<h5>Nostalgic</h5>
+							<p>Our app will bring back your childhood memories(If u are an adult).It has games like snake,tic tac toe which u must have surely played in your childhood</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -241,8 +241,8 @@
 							<i class="fa fa-trophy" aria-hidden="true"></i>
 						</div>
 						<div class="icon-right">
-							<h5>Aliquam</h5>
-							<p>Phasellus dapibus felis elit, sed accumsan arcu gravida vitae. Nullam aliquam erat at lectus ullamcorper, nec interdum neque hendrerit.</p>
+							<h5>Mind Freshing</h5>
+							<p>Our main moto is to provide entertainment,fun to our users.We can assure user will have a good experience by playing games on our platform</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -253,8 +253,8 @@
 							<i class="fa fa-user" aria-hidden="true"></i>
 						</div>
 						<div class="icon-right">
-							<h5>Consectetur</h5>
-							<p>Phasellus dapibus felis elit, sed accumsan arcu gravida vitae. Nullam aliquam erat at lectus ullamcorper, nec interdum neque hendrerit.</p>
+							<h5>Classic Games</h5>
+							<p>Our platform has old classic games like tic tac toe,snake game,memory game etc.It will surely bring back childhood memories of 90's kids.</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -265,8 +265,8 @@
 							<i class="fa fa-thumbs-up" aria-hidden="true"></i>
 						</div>
 						<div class="icon-right">
-							<h5>Bibendum</h5>
-							<p>Phasellus dapibus felis elit, sed accumsan arcu gravida vitae. Nullam aliquam erat at lectus ullamcorper, nec interdum neque hendrerit.</p>
+							<h5>Tournament </h5>
+							<p>We are also organising tournament where user can compete with another users and compare there scores.This feature is mainly for those people who love to play competitive games</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -277,8 +277,8 @@
 							<i class="fa fa-comments" aria-hidden="true"></i>
 						</div>
 						<div class="icon-right">
-							<h5>Vestibulum</h5>
-							<p>Phasellus dapibus felis elit, sed accumsan arcu gravida vitae. Nullam aliquam erat at lectus ullamcorper, nec interdum neque hendrerit.</p>
+							<h5>Reward Based System</h5>
+							<p>On winning tournament,user will also get rewards in terms of points.Number of points a winner will get will be decided at the time of tournment.Point system may not be fixed for each tournament</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -289,8 +289,8 @@
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</div>
 						<div class="icon-right">
-							<h5>Fermentum</h5>
-							<p>Phasellus dapibus felis elit, sed accumsan arcu gravida vitae. Nullam aliquam erat at lectus ullamcorper, nec interdum neque hendrerit.</p>
+							<h5>Feedback</h5>
+							<p>User can share there experience with us in feedback section of our website.They can also suggest some improvements which they would like to see on our platform.</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
