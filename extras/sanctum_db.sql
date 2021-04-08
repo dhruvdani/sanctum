@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3308
--- Generation Time: Mar 15, 2021 at 10:33 AM
--- Server version: 8.0.18
--- PHP Version: 7.3.12
+-- Host: 127.0.0.1
+-- Generation Time: Apr 07, 2021 at 06:28 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -28,9 +27,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `administrator`
 --
 
-DROP TABLE IF EXISTS `administrator`;
-CREATE TABLE IF NOT EXISTS `administrator` (
-  `ADMIN_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `administrator` (
+  `ADMIN_ID` int(11) NOT NULL,
   `ADMIN_NAME` varchar(50) NOT NULL,
   `ADMIN_EMAIL` varchar(50) NOT NULL,
   `ADMIN_CONTACT_1` varchar(10) NOT NULL,
@@ -39,16 +37,16 @@ CREATE TABLE IF NOT EXISTS `administrator` (
   `ADMIN_PASSWORD` varchar(50) NOT NULL,
   `ADMIN_PROFILE_PHOTO` varchar(200) NOT NULL,
   `ADMIN_USERNAME` varchar(50) NOT NULL,
-  `ADMIN_RECOVERY_PIN` varchar(6) NOT NULL,
-  PRIMARY KEY (`ADMIN_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ;
+  `ADMIN_RECOVERY_PIN` varchar(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `administrator`
 --
 
 INSERT INTO `administrator` (`ADMIN_ID`, `ADMIN_NAME`, `ADMIN_EMAIL`, `ADMIN_CONTACT_1`, `ADMIN_CONTACT_2`, `ADMIN_MESSAGE`, `ADMIN_PASSWORD`, `ADMIN_PROFILE_PHOTO`, `ADMIN_USERNAME`, `ADMIN_RECOVERY_PIN`) VALUES
-(1, 'dhruv dani', 'dhruvbdani@gmail.com', '7621999436', '9320099436', 'dhruv is my name', 'dhruv123', '/admin/admin_profile/20181021_004055.jpg', 'dhruv.admin', '12abcd');
+(1, 'dhruv dani', 'dhruvbdani@gmail.com', '7621999436', '9320099436', 'dhruv is my name', 'dhruv123', '/admin/admin_profile/20181021_004055.jpg', 'dhruv.admin', '12abcd'),
+(2, 'Zaneta Bhagwagar', 'zanetabhagwagar@gmail.com', '7433005558', '', 'Zaneta', 'zaneta123', '/images/t3.jpg', 'zaneta.admin', '123abc');
 
 -- --------------------------------------------------------
 
@@ -56,9 +54,8 @@ INSERT INTO `administrator` (`ADMIN_ID`, `ADMIN_NAME`, `ADMIN_EMAIL`, `ADMIN_CON
 -- Table structure for table `client`
 --
 
-DROP TABLE IF EXISTS `client`;
-CREATE TABLE IF NOT EXISTS `client` (
-  `CLIENT_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `client` (
+  `CLIENT_ID` int(11) NOT NULL,
   `CLIENT_NAME` varchar(50) NOT NULL,
   `CLIENT_EMAIL` varchar(50) NOT NULL,
   `CLIENT_CONTACT` varchar(10) NOT NULL,
@@ -66,18 +63,17 @@ CREATE TABLE IF NOT EXISTS `client` (
   `CLIENT_STATUS` tinyint(1) NOT NULL,
   `CLIENT_PROFILE_PHOTO` varchar(200) NOT NULL,
   `CLIENT_SANCTUM_TOKEN` int(11) NOT NULL,
-  `CLIENT_TOTAL_SCORE` bigint(20) NOT NULL,
-  PRIMARY KEY (`CLIENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 ;
+  `CLIENT_TOTAL_SCORE` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `client`
 --
 
 INSERT INTO `client` (`CLIENT_ID`, `CLIENT_NAME`, `CLIENT_EMAIL`, `CLIENT_CONTACT`, `CLIENT_PASSWORD`, `CLIENT_STATUS`, `CLIENT_PROFILE_PHOTO`, `CLIENT_SANCTUM_TOKEN`, `CLIENT_TOTAL_SCORE`) VALUES
-(1, 'DHRUV DANI', 'DHRUVBDANI@GMAIL.COM', '7621999436', 'dhruv@2000', 0, '\\backend assets\\images\\favicon.ico', 0, 200),
-(2, 'ZANETA BHAGWAGAR', 'ZANETABHAGWAGAR@GMAIL.COM', '98765432S1', 'Z', 1, 'https://www.searchpng.com/wp-content/uploads/2019/02/Men-Profile-Image-715x657.png', 0, 0),
-(3, 'NILAY', 'NILAY@GMAIL.COM', '98765432S1', 'NILAY', 1, 'https://www.searchpng.com/wp-content/uploads/2019/02/Men-Profile-Image-715x657.png', 0, 0),
+(1, 'DHRUV DANI', 'DHRUVBDANI@GMAIL.COM', '7621999436', 'dhruv@2000', 1, '/images/t2.jpg', 0, 200),
+(2, 'ZANETA ', 'ZANETA@GMAIL.COM', '98765432S1', 'zena', 0, '/images/t3.jpg', 0, 0),
+(3, 'NILAY', 'NILAY@GMAIL.COM', '98765432S1', 'NILAY', 1, '/images/t4.jpg', 0, 0),
 (5, 'alpha', 'ALPHA@GMAIL.COM', '', 'alpha', 1, '\\backend assets\\images\\favicon.ico', 0, 0);
 
 -- --------------------------------------------------------
@@ -86,16 +82,14 @@ INSERT INTO `client` (`CLIENT_ID`, `CLIENT_NAME`, `CLIENT_EMAIL`, `CLIENT_CONTAC
 -- Table structure for table `feedback`
 --
 
-DROP TABLE IF EXISTS `feedback`;
-CREATE TABLE IF NOT EXISTS `feedback` (
-  `FEEDBACK_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `FEEDBACK_NAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `FEEDBACK_EMAIL` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `FEEDBACK_CONTACT` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `FEEDBACK_MESSAGE` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `FEEDBACK_TIME` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`FEEDBACK_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 ;
+CREATE TABLE `feedback` (
+  `FEEDBACK_ID` int(11) NOT NULL,
+  `FEEDBACK_NAME` varchar(50) NOT NULL,
+  `FEEDBACK_EMAIL` varchar(50) NOT NULL,
+  `FEEDBACK_CONTACT` varchar(20) NOT NULL,
+  `FEEDBACK_MESSAGE` text NOT NULL,
+  `FEEDBACK_TIME` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `feedback`
@@ -112,24 +106,22 @@ INSERT INTO `feedback` (`FEEDBACK_ID`, `FEEDBACK_NAME`, `FEEDBACK_EMAIL`, `FEEDB
 -- Table structure for table `game`
 --
 
-DROP TABLE IF EXISTS `game`;
-CREATE TABLE IF NOT EXISTS `game` (
-  `GAME_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `game` (
+  `GAME_ID` int(11) NOT NULL,
   `GAME_NAME` varchar(50) NOT NULL,
   `GAME_STATUS` tinyint(1) NOT NULL,
   `GAME_DESCRIPTION` text NOT NULL,
   `GAME_PROFILE_IMAGE` varchar(200) NOT NULL,
-  `GAME_CATEGORY` varchar(50) NOT NULL,
-  PRIMARY KEY (`GAME_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 ;
+  `GAME_CATEGORY` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `game`
 --
 
 INSERT INTO `game` (`GAME_ID`, `GAME_NAME`, `GAME_STATUS`, `GAME_DESCRIPTION`, `GAME_PROFILE_IMAGE`, `GAME_CATEGORY`) VALUES
-(1, 'DUMMY GAME', 1, 'THIS IS A DUMMY GAME CREATED FOR TESTING AND CHECKING THE FUNCTIONALITY OF BACKED CONNECTION. -DHRUV DANI', '\\backend assets\\images\\favicon.ico', 'DUMMY'),
-(2, 'DUMMY GAME 2', 1, 'THIS IS ANOTHER GAME!!!<BR>\r\nOKAY!!!!!!', '\\backend assets\\images\\HastiJlogo.png', 'DUMMY');
+(1, 'TETRIS', 1, 'Tetris® is the addictive puzzle game that started it all, embracing our universal desire to create order out of chaos.', 'images\\tetris.png', 'DUMMY'),
+(2, 'SNAKE', 1, 'Snake is the common name for a video game concept where the player maneuvers a line which grows in length, with the line itself being a primary obstacle.', 'images\\snake.png', 'DUMMY');
 
 -- --------------------------------------------------------
 
@@ -137,17 +129,13 @@ INSERT INTO `game` (`GAME_ID`, `GAME_NAME`, `GAME_STATUS`, `GAME_DESCRIPTION`, `
 -- Table structure for table `result`
 --
 
-DROP TABLE IF EXISTS `result`;
-CREATE TABLE IF NOT EXISTS `result` (
-  `RESULT_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `result` (
+  `RESULT_ID` int(11) NOT NULL,
   `TOURNAMENT_ID` int(11) NOT NULL,
   `CLIENT_ID` int(11) NOT NULL,
   `REWARD_STATUS` tinyint(4) NOT NULL,
-  `POSITION` int(11) NOT NULL,
-  PRIMARY KEY (`RESULT_ID`),
-  KEY `CLIENT_ID` (`CLIENT_ID`),
-  KEY `TOURNAMENT_ID` (`TOURNAMENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 ;
+  `POSITION` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `result`
@@ -159,7 +147,10 @@ INSERT INTO `result` (`RESULT_ID`, `TOURNAMENT_ID`, `CLIENT_ID`, `REWARD_STATUS`
 (3, 2, 2, 0, 3),
 (5, 3, 1, 0, 1),
 (10, 3, 3, 0, 3),
-(12, 3, 2, 0, 2);
+(12, 3, 2, 0, 2),
+(14, 1, 3, 0, 1),
+(15, 1, 2, 0, 2),
+(16, 1, 1, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -167,18 +158,13 @@ INSERT INTO `result` (`RESULT_ID`, `TOURNAMENT_ID`, `CLIENT_ID`, `REWARD_STATUS`
 -- Table structure for table `scoreboard`
 --
 
-DROP TABLE IF EXISTS `scoreboard`;
-CREATE TABLE IF NOT EXISTS `scoreboard` (
-  `SCOREBOARD_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `scoreboard` (
+  `SCOREBOARD_ID` int(11) NOT NULL,
   `CLIENT_ID` int(11) NOT NULL,
   `GAME_ID` int(11) NOT NULL,
   `TOURNAMENT_ID` int(11) NOT NULL,
-  `SCORE_TOTAL` int(11) NOT NULL,
-  PRIMARY KEY (`SCOREBOARD_ID`),
-  KEY `CLIENT_ID` (`CLIENT_ID`),
-  KEY `GAME_ID` (`GAME_ID`),
-  KEY `TOURNAMENT_ID` (`TOURNAMENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 ;
+  `SCORE_TOTAL` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `scoreboard`
@@ -202,9 +188,8 @@ INSERT INTO `scoreboard` (`SCOREBOARD_ID`, `CLIENT_ID`, `GAME_ID`, `TOURNAMENT_I
 -- Table structure for table `tournament`
 --
 
-DROP TABLE IF EXISTS `tournament`;
-CREATE TABLE IF NOT EXISTS `tournament` (
-  `TOURNAMENT_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tournament` (
+  `TOURNAMENT_ID` int(11) NOT NULL,
   `TOURNAMENT_NAME` varchar(50) NOT NULL,
   `TOURNAMENT_START` date NOT NULL,
   `TOURNAMENT_END` date NOT NULL,
@@ -216,18 +201,114 @@ CREATE TABLE IF NOT EXISTS `tournament` (
   `TOURNAMENT_SECOND_PRIZE` int(11) NOT NULL,
   `TOURNAMENT_THIRD_PRIZE` int(11) NOT NULL,
   `TOURNAMENT_TREMS` text NOT NULL,
-  `TOURNAMENT_REGISTRATION_TILL` date NOT NULL,
-  PRIMARY KEY (`TOURNAMENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 ;
+  `TOURNAMENT_REGISTRATION_TILL` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tournament`
 --
 
 INSERT INTO `tournament` (`TOURNAMENT_ID`, `TOURNAMENT_NAME`, `TOURNAMENT_START`, `TOURNAMENT_END`, `TOURNAMENT_STATUS`, `TOURNAMENT_SUBSCRIBERS`, `TOURNAMENT_TOKEN_PRICE`, `TOURNAMENT_DETAILS`, `TOURNAMENT_FIRST_PRIZE`, `TOURNAMENT_SECOND_PRIZE`, `TOURNAMENT_THIRD_PRIZE`, `TOURNAMENT_TREMS`, `TOURNAMENT_REGISTRATION_TILL`) VALUES
-(1, 'APRIL SEASON', '2021-03-01', '2021-03-31', 1, 0, 10, 'OUR VERY FIRST TOURNAMENT.\r\nENJOY PEOPLE!!!', 100, 70, 40, 'THE ONLY CONDITION IS THAT THERE IS NO CONDITION.', '2021-02-28'),
+(1, 'APRIL SEASON', '2021-03-02', '2021-03-31', 1, 0, 10, 'OUR VERY FIRST TOURNAMENT.ENJOY PEOPLE!!!', 100, 70, 40, 'THE ONLY CONDITION IS THAT THERE IS NO CONDITION.', '2021-02-28'),
 (2, 'CWL', '2021-02-01', '2021-02-28', 1, 0, 0, '', 0, 0, 0, '0K', '2021-03-31'),
 (3, 'JAN SEASON', '2021-01-01', '2021-01-31', 1, 0, 0, '', 0, 0, 0, 'LOL PPL THIS IS A DUMMY TEXT', '2020-12-31');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `administrator`
+--
+ALTER TABLE `administrator`
+  ADD PRIMARY KEY (`ADMIN_ID`);
+
+--
+-- Indexes for table `client`
+--
+ALTER TABLE `client`
+  ADD PRIMARY KEY (`CLIENT_ID`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`FEEDBACK_ID`);
+
+--
+-- Indexes for table `game`
+--
+ALTER TABLE `game`
+  ADD PRIMARY KEY (`GAME_ID`);
+
+--
+-- Indexes for table `result`
+--
+ALTER TABLE `result`
+  ADD PRIMARY KEY (`RESULT_ID`),
+  ADD KEY `CLIENT_ID` (`CLIENT_ID`),
+  ADD KEY `TOURNAMENT_ID` (`TOURNAMENT_ID`);
+
+--
+-- Indexes for table `scoreboard`
+--
+ALTER TABLE `scoreboard`
+  ADD PRIMARY KEY (`SCOREBOARD_ID`),
+  ADD KEY `CLIENT_ID` (`CLIENT_ID`),
+  ADD KEY `GAME_ID` (`GAME_ID`),
+  ADD KEY `TOURNAMENT_ID` (`TOURNAMENT_ID`);
+
+--
+-- Indexes for table `tournament`
+--
+ALTER TABLE `tournament`
+  ADD PRIMARY KEY (`TOURNAMENT_ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `administrator`
+--
+ALTER TABLE `administrator`
+  MODIFY `ADMIN_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `client`
+--
+ALTER TABLE `client`
+  MODIFY `CLIENT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `FEEDBACK_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `game`
+--
+ALTER TABLE `game`
+  MODIFY `GAME_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `result`
+--
+ALTER TABLE `result`
+  MODIFY `RESULT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `scoreboard`
+--
+ALTER TABLE `scoreboard`
+  MODIFY `SCOREBOARD_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `tournament`
+--
+ALTER TABLE `tournament`
+  MODIFY `TOURNAMENT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
@@ -237,16 +318,16 @@ INSERT INTO `tournament` (`TOURNAMENT_ID`, `TOURNAMENT_NAME`, `TOURNAMENT_START`
 -- Constraints for table `result`
 --
 ALTER TABLE `result`
-  ADD CONSTRAINT `result_ibfk_1` FOREIGN KEY (`CLIENT_ID`) REFERENCES `client` (`CLIENT_ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `result_ibfk_2` FOREIGN KEY (`TOURNAMENT_ID`) REFERENCES `tournament` (`TOURNAMENT_ID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `result_ibfk_1` FOREIGN KEY (`CLIENT_ID`) REFERENCES `client` (`CLIENT_ID`),
+  ADD CONSTRAINT `result_ibfk_2` FOREIGN KEY (`TOURNAMENT_ID`) REFERENCES `tournament` (`TOURNAMENT_ID`);
 
 --
 -- Constraints for table `scoreboard`
 --
 ALTER TABLE `scoreboard`
-  ADD CONSTRAINT `scoreboard_ibfk_1` FOREIGN KEY (`CLIENT_ID`) REFERENCES `client` (`CLIENT_ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `scoreboard_ibfk_2` FOREIGN KEY (`GAME_ID`) REFERENCES `game` (`GAME_ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `scoreboard_ibfk_3` FOREIGN KEY (`TOURNAMENT_ID`) REFERENCES `tournament` (`TOURNAMENT_ID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `scoreboard_ibfk_1` FOREIGN KEY (`CLIENT_ID`) REFERENCES `client` (`CLIENT_ID`),
+  ADD CONSTRAINT `scoreboard_ibfk_2` FOREIGN KEY (`GAME_ID`) REFERENCES `game` (`GAME_ID`),
+  ADD CONSTRAINT `scoreboard_ibfk_3` FOREIGN KEY (`TOURNAMENT_ID`) REFERENCES `tournament` (`TOURNAMENT_ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

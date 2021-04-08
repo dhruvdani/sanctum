@@ -40,7 +40,7 @@
             </div>
            
         </div>
-        <div class="row" style="padding-top:10rem;padding-bottom:0rem;color:black;background-color:white;">
+        <div class="row" style="padding-top:10rem;padding-bottom:0rem;color:black;background-color:transparent;">
             <div class="out" style="text-align:center;height:auto">
                 <h2 >Zaneta Bhagwagar</h2>
                 <h5>+91 93890 34220</h5>
@@ -50,7 +50,7 @@
            
         <hr class="container" style="border-top: 1px solid lightgrey;">
         
-        <div class="row container-fluid mt-3">
+        <div class="row container-fluid mt-3" style="margin-left:0.1rem">
             <div class="col-xl-4 col-md-6 mb-5 ">
                 <div class="card shadow h-100 py-3 " style="background-color:rgba(221,89,2,0.2);color:#30120D;">
                     <div class="card-body" style="border:none">
