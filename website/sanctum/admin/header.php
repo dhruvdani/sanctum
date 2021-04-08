@@ -1,6 +1,7 @@
 ﻿<?php
     // require('../backend assets/connection.php');
-    require('connection.php');
+    require('/backend assets/connection.php');
+    
     session_start();
     if(!isset($_SESSION['admin_name']))
     {
