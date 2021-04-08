@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2021 at 06:28 PM
+-- Generation Time: Apr 08, 2021 at 09:02 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -126,6 +126,20 @@ INSERT INTO `game` (`GAME_ID`, `GAME_NAME`, `GAME_STATUS`, `GAME_DESCRIPTION`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pwdreset`
+--
+
+CREATE TABLE `pwdreset` (
+  `PWDRESETID` int(11) NOT NULL,
+  `PWDRESETEMAIL` text NOT NULL,
+  `PWDRESETSELECTOR` text NOT NULL,
+  `PWDRESETTOKEN` longtext NOT NULL,
+  `PWDRESETEXPIRES` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `result`
 --
 
@@ -242,6 +256,12 @@ ALTER TABLE `game`
   ADD PRIMARY KEY (`GAME_ID`);
 
 --
+-- Indexes for table `pwdreset`
+--
+ALTER TABLE `pwdreset`
+  ADD PRIMARY KEY (`PWDRESETID`);
+
+--
 -- Indexes for table `result`
 --
 ALTER TABLE `result`
@@ -291,6 +311,12 @@ ALTER TABLE `feedback`
 --
 ALTER TABLE `game`
   MODIFY `GAME_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `pwdreset`
+--
+ALTER TABLE `pwdreset`
+  MODIFY `PWDRESETID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `result`
