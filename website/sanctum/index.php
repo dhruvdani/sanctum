@@ -362,7 +362,7 @@
 											</div>
 											<div class="hr"></div>
 											<div class="foot-lnk">
-												<a class="a" href="forgotpassword.php">Forgot Password?</a>
+												<a class="a" href="/backend assets/forgotpassword.php">Forgot Password?</a>
 											</div>
 										</div>
 
