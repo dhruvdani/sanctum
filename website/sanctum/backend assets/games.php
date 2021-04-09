@@ -22,7 +22,7 @@
                         </div>
                         <!-- //Main icon image -->
                         <div class="testimonial-img">
-                            <img src="/'.$row["GAME_PROFILE_IMAGE"].'" alt="" />
+                            <img src="'.$row["GAME_PROFILE_IMAGE"].'" alt="" />
                         </div>
                         <div class="testimonial-img t-img2">
                             <img src="image.jpg" alt="" />
