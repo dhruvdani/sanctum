@@ -37,8 +37,15 @@
         $result=mysqli_query($conn,$query);
         if($result->num_rows > 0)
         {
+			$row=mysqli_fetch_array($result);
             //start session and redirect to dashboard
+			session_start();
+            $_SESSION['client_name']=$row['CLIENT_NAME'];
+            $_SESSION['client_email']=$row['CLIENT_EMAIL'];
+            $_SESSION['client_profile_photo']=$row['CLIENT_PROFILE_PHOTO'];
+            $_SESSION['client_id']=$row['CLIENT_ID'];
             echo "client success";
+			header('location:../admin/index.php');
         }
         else
         {
