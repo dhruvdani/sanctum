@@ -1,6 +1,6 @@
 <?php
     $title="Tournament";
-    require_once('/admin/header.php');
+    require_once('header.php');
 
     if(isset($_POST['edit_submit']))
     {   
@@ -343,5 +343,5 @@ $("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
 
 </script>
 <?php
-    require_once('/admin/footer.php');
+    require_once('footer.php');
 ?>

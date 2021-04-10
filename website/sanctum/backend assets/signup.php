@@ -1,6 +1,6 @@
 <?php
 
-    require_once('/backend assets/connection.php');
+    require_once('connection.php');
 
     if(isset($_POST['signup_email']))
     {

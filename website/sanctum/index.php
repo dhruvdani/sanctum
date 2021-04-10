@@ -1,5 +1,6 @@
 <?php
 	require_once('backend assets/connection.php');
+	require('backend assets/counter.php');
 ?>
 
 

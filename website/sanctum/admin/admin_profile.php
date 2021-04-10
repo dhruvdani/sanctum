@@ -1,6 +1,6 @@
 <?php
     $title="Admin Profile";
-    require_once('/admin/header.php');
+    require_once('header.php');
 
     if(isset($_POST['save']))
     {
@@ -210,5 +210,5 @@
     </div>
 
 <?php
-    require_once('/admin/footer.php');
+    require_once('footer.php');
 ?>
