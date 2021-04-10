@@ -1,5 +1,5 @@
 <?php
-    require_once('../backend assets/connection.php');
+    require_once('/backend assets/connection.php');
 
     if (isset($_POST["reset-request-submit"])) {
         
@@ -55,7 +55,7 @@
 
         mail($to, $subject, $message, $headers);
 
-        header("Location: ../backend assets/forgotpasword.php?reset=success");
+        header("Location: /backend assets/forgotpasword.php?reset=success");
 
     } else {
         header("location:/index.php");

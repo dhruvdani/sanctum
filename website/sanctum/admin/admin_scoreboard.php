@@ -1,6 +1,6 @@
 <?php
     $title="Scoreboard";
-    require_once('../admin/header.php');
+    require_once('/admin/header.php');
 
     $tournament_id=0;
     if(isset($_GET['tournament_id']))
@@ -147,5 +147,5 @@
 
 
 <?php
-    require_once('../admin/footer.php');
+    require_once('/admin/footer.php');
 ?>

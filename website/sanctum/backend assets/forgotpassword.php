@@ -131,7 +131,7 @@
     <body>
         <div class="container-center">
             <center>
-                <img src = "../images/logo.png" style="width:20rem" >
+                <img src = "/images/logo.png" style="width:20rem" >
             </center>
             <h2>Don't Worry!</h2>
             <form action="/backend assets/forgotpassword.inc.php">

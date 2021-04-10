@@ -1,6 +1,6 @@
 <?php
     $title="Game Management";
-    require_once('../admin/header.php');
+    require_once('/admin/header.php');
 
     $sql_view='select * from game;';
     $result=mysqli_query($conn,$sql_view);
@@ -210,5 +210,5 @@ $("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
 
 </script>
 <?php
-    require_once('../admin/footer.php');
+    require_once('/admin/footer.php');
 ?>

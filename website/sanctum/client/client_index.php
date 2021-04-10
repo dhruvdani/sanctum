@@ -1,6 +1,6 @@
 <?php
     $title="Welcome";
-    require_once('../client/client_header.php'); 
+    require_once('/client/client_header.php'); 
     
     $row['ADMIN_PROFILE_PHOTO']="../images/t3.jpg";
 ?>

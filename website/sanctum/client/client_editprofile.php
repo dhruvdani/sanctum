@@ -1,6 +1,6 @@
 <?php
     $title="Client Profile";
-    require_once('../client/client_header.php'); 
+    require_once('/client/client_header.php'); 
 
 
     // if(isset($_POST['save']))
@@ -210,5 +210,5 @@
     </div>
 
 <?php
-    require_once('../client/client_footer.php');
+    require_once('/client/client_footer.php');
 ?>

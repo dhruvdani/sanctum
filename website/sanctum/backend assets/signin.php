@@ -1,7 +1,7 @@
 <?php
     //2058 + 1575 + 2205 = 5838 -> 8463 - 10400(fare difference) 11687(fare difference) via delhi
 
-    require_once('../backend assets/connection.php');
+    require_once('/backend assets/connection.php');
 
     if(isset($_POST['signin_keep']))
     {
@@ -26,7 +26,7 @@
             $_SESSION['admin_profile_photo']=$row['ADMIN_PROFILE_PHOTO'];
             $_SESSION['admin_id']=$row['ADMIN_ID'];
             
-            header('location:../admin/index.php');
+            header('location:/admin/index.php');
         }
         else
         {
@@ -47,11 +47,11 @@
             $_SESSION['client_profile_photo']=$row['CLIENT_PROFILE_PHOTO'];
             $_SESSION['client_id']=$row['CLIENT_ID'];
             echo "client success";
-			header('location:../admin/index.php');
+			header('location:/admin/index.php');
         }
         else
         {
-            header('location:../index.php?error_call_back=invalid_input');
+            header('location:/index.php?error_call_back=invalid_input');
         }
     }
 ?>

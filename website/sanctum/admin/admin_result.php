@@ -75,7 +75,7 @@
 
     
     $title="Result";
-    require_once('../admin/header.php');
+    require_once('/admin/header.php');
 
     $error_message="Bad Request !";
     $fetch_photo="";
@@ -335,5 +335,5 @@
 
 
 <?php
-    require_once('../admin/footer.php');
+    require_once('/admin/footer.php');
 ?> 

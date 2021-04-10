@@ -1,6 +1,6 @@
 <?php
     $title="Clients";
-    require_once('../admin/header.php');
+    require_once('/admin/header.php');
 
     if(isset($_GET['id']) && isset($_GET['current_status']))
     {
@@ -165,5 +165,5 @@
 
 
 <?php
-    require_once('../admin/footer.php');
+    require_once('/admin/footer.php');
 ?>

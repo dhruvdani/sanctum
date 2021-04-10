@@ -4,7 +4,7 @@
     function get_game_section()
     {
      
-        require_once('../backend assets/connection.php');
+        require_once('/backend assets/connection.php');
 
         $query='select * from game where GAME_STATUS=1;';
         $result=mysqli_query($conn,$query);
