@@ -1,6 +1,7 @@
 <?php
     $title="Dashboard";
-    require_once('/admin/header.php');
+    require('header.php');
+    require('data_cards.php');
 ?>
 
 <!-- Begin Page Content -->
@@ -20,8 +21,8 @@
                             <i class="fas fa-users fa-2x text-white "></i>
                         </div><br>
                         <div class="col-auto">
-                        <div class="h1 mb-1 text-white mt-1">40</div>
-                            <div class="text-s font-weight-bold text-white text-uppercase mt-3 mb-1">March<br> registration</div>
+                            <div class="text-s font-weight-bold text-white text-uppercase mt-3 mb-1"> registration</div>
+                        <div class="h1 mb-1 text-white mt-1"><?php echo get_registrations();?></div>
                         </div>
                     </div>
                 </div>
@@ -36,8 +37,8 @@
                             <i class="fas fa-snowflake fa-2x text-white " aria-hidden="true"></i>
                         </div><br>
                         <div class="col-auto">
-                        <div class="h1 mb-1  text-white mt-1">₹21,500</div>
-                            <div class="text-s font-weight-bold text-uppercase mt-3  mb-1">invoiced<Br> amount</div>
+                            <div class="text-s font-weight-bold text-uppercase mt-3  mb-1">TOURNAMENT</div>
+                        <div class="h1 mb-1  text-white mt-1"><?php echo get_tournament();?></div>
                         </div>
                     </div>
                 </div>
@@ -52,8 +53,8 @@
                             <i class="fas fa-gamepad fa-2x text-white "></i>
                         </div><br>
                         <div class="col-auto">
-                            <div class="h1 mb-1 text-white mt-1">50,000</div>
                             <div class="text-s font-weight-bold  text-uppercase mt-3 mb-1">Games</div>
+                            <div class="h1 mb-1 text-white mt-1"><?php echo get_game();?></div>
                         </div>
                     </div>
                 </div>
@@ -68,8 +69,8 @@
                             <i class="fas fa-user-secret fa-2x text-white "></i>
                         </div><br>
                         <div class="col-auto">
-                        <div class="h1 mb-1 text-white mt-1">100</div>
-                            <div class="text-s font-weight-bold text-uppercase mt-3 mb-1">CLIENTS</div>
+                            <div class="text-s font-weight-bold text-uppercase mt-3 mb-1">USERS</div>
+                        <div class="h1 mb-1 text-white mt-1"><?php echo get_client();?></div>
                         </div>
                     </div>
                 </div>
@@ -84,8 +85,8 @@
                             <i class="fas fa-comments fa-2x text-white "></i>
                         </div><br>
                         <div class="col-auto">
-                        <div class="h1 mb-1  text-white mt-1">50</div>
-                            <div class="text-s font-weight-bold text-uppercase mt-3 mb-1">feedback</div>
+                            <div class="text-s font-weight-bold text-uppercase mt-3 mb-1">FEEDBACK</div>
+                        <div class="h1 mb-1  text-white mt-1"><?php echo get_feedback();?></div>
                         </div>
                     </div>
                 </div>
@@ -100,8 +101,8 @@
                             <i class="fas fa-spinner fa-2x text-white "></i>
                         </div><br>
                         <div class="col-auto">
-                        <div class="h1 mb-1  text-white mt-1">10,000</div>
-                            <div class="text-s font-weight-bold text-uppercase mt-3 mb-1">Visitors</div>
+                        <div class="text-s font-weight-bold text-uppercase mt-3 mb-1">Visitors</div>
+                        <div class="h1 mb-1  text-white mt-1"><?php echo get_visitor();?></div>
                         </div>
                     </div>
                 </div>
@@ -120,7 +121,7 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" >
-                    <h6 class="m-0 font-weight-bold text-primary">Monthly Revenue</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Registrations</h6>
                     
                 </div>
                 <!-- Card Body -->
@@ -136,7 +137,7 @@
         <div class="col-xl-6 col-lg-5 ">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Registrations</h6>
+                <h6 class="m-0 font-weight-bold text-primary">other</h6>
             </div>
             <div class="card-body">
                 <div class="chart-bar">
@@ -152,5 +153,5 @@
 
 
 <?php
-    require_once('/admin/footer.php');
+    require('footer.php');
 ?>
