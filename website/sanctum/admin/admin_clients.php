@@ -1,6 +1,6 @@
 <?php
     $title="Clients";
-    require('header.php');
+    require_once('../admin/header.php');
 
     if(isset($_GET['id']) && isset($_GET['current_status']))
     {
@@ -18,8 +18,7 @@
     $sql_view='select * from client;';
     $result=mysqli_query($conn,$sql_view);
     $resultcheck=mysqli_num_rows($result);
-    
-   
+      
 ?>
 
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -166,5 +165,5 @@
 
 
 <?php
-    require('footer.php');
+    require_once('../admin/footer.php');
 ?>

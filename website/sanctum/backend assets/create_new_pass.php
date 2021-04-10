@@ -187,7 +187,7 @@
 
         $currentDate =date("U");
 
-        require('/backend assets/connection.php');
+        require_once('../backend assets/connection.php');
 
         $sql = "SELECT * FROM PWDRESET WHERE PWDRESETSELECTOR=? AND PWDRESETEXPIRES >= ?";
         $stmt=mysqli_stmt_init($conn);

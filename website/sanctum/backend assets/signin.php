@@ -1,6 +1,8 @@
 <?php
     //2058 + 1575 + 2205 = 5838 -> 8463 - 10400(fare difference) 11687(fare difference) via delhi
-    require('connection.php');
+
+    require_once('../backend assets/connection.php');
+
     if(isset($_POST['signin_keep']))
     {
         //to make a cookiee to remember user

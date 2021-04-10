@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+        require_once('../backend assets/connection.php');
+        //only for static values 
+        $client_name="Zaneta Bhagwagar";
+        $client_profile="/images/t3.jpg";
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -31,11 +38,7 @@
     
 
 
-    <?php 
-        //only for static values 
-        $client_name="Zaneta Bhagwagar";
-        $client_profile="/images/t3.jpg";
-    ?>
+   
 </head>
 
                 

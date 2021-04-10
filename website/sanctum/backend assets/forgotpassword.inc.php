@@ -1,5 +1,5 @@
 <?php
-    require('/backend assets/connection.php');
+    require_once('../backend assets/connection.php');
 
     if (isset($_POST["reset-request-submit"])) {
         

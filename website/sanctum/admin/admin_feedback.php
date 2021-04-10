@@ -1,6 +1,6 @@
 <?php
     $title="Feedback";
-    require('header.php');
+    require_once('../admin/header.php');
 
     $sql_view='select * from feedback;';
     $result=mysqli_query($conn,$sql_view);
@@ -135,5 +135,5 @@
 
 
 <?php
-    require('footer.php');
+    require_once('../admin/footer.php');
 ?>

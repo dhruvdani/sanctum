@@ -1,6 +1,7 @@
 <?php
 
-    require('connection.php');
+    require_once('../backend assets/connection.php');
+
     if(isset($_POST['signup_email']))
     {
         $cleint_email=$_POST['signup_email'];
