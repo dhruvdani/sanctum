@@ -67,7 +67,8 @@
 
     function get_tournament_id()
     {
-        require('connection.php');
+        
+        require_once('/backend assets/connection.php');
 
         $query="select * from tournament order by TOURNAMENT_ID DESC;";
 
@@ -90,7 +91,8 @@
     //FIRST LOGOGIC
     function get_scoreboard_data()
     {
-        require('connection.php');
+        
+        require_once('/backend assets/connection.php');
 
         $tournament_id=get_tournament_id();
 

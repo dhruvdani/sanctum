@@ -1,6 +1,6 @@
 <?php
     $title="Dashboard";
-    require('header.php');
+    require_once('/admin/header.php');
 ?>
 
 <!-- Begin Page Content -->
@@ -152,5 +152,5 @@
 
 
 <?php
-    require('footer.php');
+    require_once('/admin/footer.php');
 ?>

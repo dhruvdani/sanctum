@@ -1,6 +1,6 @@
 <?php
     $title="Transaction Details";
-    require('header.php');
+    require_once('/admin/header.php');
 
     $sql_view='select * from scoreboard;';
     $result=mysqli_query($conn,$sql_view);
@@ -150,5 +150,5 @@
 
 
 <?php
-    require('footer.php');
+    require_once('/admin/footer.php');
 ?>

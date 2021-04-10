@@ -61,7 +61,8 @@
 
     function get_results()
     {
-        require('connection.php');
+       
+        require_once('/backend assets/connection.php');
 
         $cnt=1;
         $query="select * from tournament order by TOURNAMENT_ID DESC;";

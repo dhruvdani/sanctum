@@ -1,6 +1,7 @@
 <?php
     $title="Welcome";
-    require('client_header.php'); 
+    require_once('/client/client_header.php'); 
+    
     $row['ADMIN_PROFILE_PHOTO']="../images/t3.jpg";
 ?>
 
@@ -100,5 +101,5 @@
     </div> 
 
 <?php
-    require('client_footer.php');
+    require_once('../client/client_footer.php');
 ?>
