@@ -2,6 +2,7 @@
     $title="Dashboard";
     require('header.php');
     require('data_cards.php');
+    require('chart_data.php');
 ?>
 
 <!-- Begin Page Content -->
@@ -121,12 +122,12 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" >
-                    <h6 class="m-0 font-weight-bold text-primary">Registrations</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Registrations of all tournaments</h6>
                     
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                    <canvas id="mychart"></canvas>
+                    <canvas id="myregistrations"></canvas>
                 </div>
             </div>
         </div>
@@ -135,10 +136,10 @@
         <div class="col-xl-6  ">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">other</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Client Status</h6>
             </div>
             <div class="card-body">
-                <canvas id="myBarChart"></canvas>
+                <canvas id="myclient"></canvas>
             </div>
 
         </div>
@@ -148,47 +149,94 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js" crossorigin="anonymous"></script>
 <script>
     
-    drawChart();
+    drawChart_1();
+    drawChart_2();
 
-    function drawChart()
+    function drawChart_1()
     {
-        var ctx = document.getElementById('mychart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+        
+                var ctx = document.getElementById('myregistrations').getContext('2d');
+                
+                var data_array = <?php echo myregistration();?>;
+
+                var tournament_name =[];
+                var registration=[];
+
+                for(i = 0 ; i< data_array.length ; i++)
+                {
+                    tournament_name.push(data_array[i].tname);
+                    registration.push(data_array[i].total);
                 }
-            }
-        });
+
+                var myChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: tournament_name,
+                        datasets: [{
+                            label: 'Total Participants',
+                            data: registration,
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
     }
 
+    function drawChart_2()
+    {
+        
+                var ctx = document.getElementById('myclient').getContext('2d');
+                
+                var data_array = <?php echo myclient();?>;
+
+                console.log(data_array);
+
+                var lbl =['Deactivate','Activate'];
+                var status =data_array;
+
+
+                var myChart = new Chart(ctx, {
+                    type: 'polarArea',
+                    data: {
+                        labels: lbl,
+                        datasets: [{
+                            label: 'Total Participants',
+                            data: status,
+                            backgroundColor: [
+                                'rgba(153, 102, 255, 0.4)',
+                                'rgba(255, 159, 64, 0.4)'
+                            ],
+                            borderColor: [
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    }
+                });
+    }
 </script>
 
 
