@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'gameTetris/mainTetris.dart';
 import 'package:provider/provider.dart';
-import 'gameTicTacToe/maintic.dart';
+import 'gameTicTacToe-PvP/main.dart';
 import 'gameSnake/mainSnake.dart';
 import 'gameMemory/Memory.dart';
 

@@ -12,23 +12,6 @@ const STROKE_WIDTH = 6.0;
 const HALF_STROKE_WIDTH = STROKE_WIDTH / 2.0;
 const DOUBLE_STROKE_WIDTH = STROKE_WIDTH * 2.0;
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.yellow[50],
-        appBarTheme: AppBarTheme(
-          color: Colors.blueAccent,
-        ),
-      ),
-      home: TicTacToe(),
-    );
-  }
-}
-
 class TicTacToe extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _TicTacToeState();
@@ -42,28 +25,37 @@ class _TicTacToeState extends State {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Tic Tac Toe'),
-        centerTitle: true,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.yellow[50],
+        appBarTheme: AppBarTheme(
+          color: Colors.blueAccent,
+        ),
       ),
-      body: Center(
-        child: GestureDetector(
-          onTapUp: (TapUpDetails details) {
-            setState(() {
-              if (_gameMarks.length >= 9 || _winningLine != null) {
-                _gameMarks = Map<int, Mark>();
-                _currentMark = Mark.o;
-                _winningLine = null;
-              } else {
-                _addMark(details.localPosition.dx, details.localPosition.dy);
-              }
-            });
-          },
-          child: AspectRatio(
-            aspectRatio: 1.0,
-            child: CustomPaint(
-              painter: GamePainter(_gameMarks, _winningLine),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Tic Tac Toe'),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: GestureDetector(
+            onTapUp: (TapUpDetails details) {
+              setState(() {
+                if (_gameMarks.length >= 9 || _winningLine != null) {
+                  _gameMarks = Map<int, Mark>();
+                  _currentMark = Mark.o;
+                  _winningLine = null;
+                } else {
+                  _addMark(details.localPosition.dx, details.localPosition.dy);
+                }
+              });
+            },
+            child: AspectRatio(
+              aspectRatio: 1.0,
+              child: CustomPaint(
+                painter: GamePainter(_gameMarks, _winningLine),
+              ),
             ),
           ),
         ),
