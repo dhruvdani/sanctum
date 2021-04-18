@@ -1,1 +1,0 @@
-1. Don't replace pubspec.yaml directly, insteed make changes to existing file to avoid conflicts
