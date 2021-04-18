@@ -1,6 +1,6 @@
 <?php
     $title="Scoreboard";
-    require_once('header.php');
+    require_once('client_header.php');
 
     $tournament_id=0;
     if(isset($_GET['tournament_id']))
@@ -82,7 +82,7 @@
                                         $query_tournament="select * from tournament;";
                                         $data=mysqli_query($conn,$query_tournament);
                                         while($row=mysqli_fetch_array($data))
-                                            echo '<a class="dropdown-item" href=admin_scoreboard.php?tournament_id='.$row["TOURNAMENT_ID"].'&tournament_name='.urlencode($row["TOURNAMENT_NAME"]).'>'.$row["TOURNAMENT_NAME"].'</a>';
+                                            echo '<a class="dropdown-item" href=client_tournament.php?tournament_id='.$row["TOURNAMENT_ID"].'&tournament_name='.urlencode($row["TOURNAMENT_NAME"]).'>'.$row["TOURNAMENT_NAME"].'</a>';
                                     ?>
                                     </div>
                                 </div>
@@ -115,6 +115,7 @@
                                             while($row=mysqli_fetch_assoc($result))
                                             {
                                                 ++$rank;
+												if($row["CLIENT_ID"]==$_SESSION['client_id'])
                                                 echo'<tr>
                                                     <td>'.$rank.'</td>
                                                     <td>'.$row["CLIENT_ID"].'</td>
@@ -147,5 +148,5 @@
 
 
 <?php
-    require_once('footer.php');
+    require_once('client_footer.php');
 ?>

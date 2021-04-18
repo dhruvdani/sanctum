@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2021 at 09:02 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.6
+-- Generation Time: Apr 18, 2021 at 06:16 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,7 +45,7 @@ CREATE TABLE `administrator` (
 --
 
 INSERT INTO `administrator` (`ADMIN_ID`, `ADMIN_NAME`, `ADMIN_EMAIL`, `ADMIN_CONTACT_1`, `ADMIN_CONTACT_2`, `ADMIN_MESSAGE`, `ADMIN_PASSWORD`, `ADMIN_PROFILE_PHOTO`, `ADMIN_USERNAME`, `ADMIN_RECOVERY_PIN`) VALUES
-(1, 'dhruv dani', 'dhruvbdani@gmail.com', '7621999436', '9320099436', 'dhruv is my name', 'dhruv123', '/admin/admin_profile/20181021_004055.jpg', 'dhruv.admin', '12abcd'),
+(1, 'dhruv dani', 'dhruvbdani@gmail.com', '7621999436', '9320099436', 'dhruv is my name', 'dhruv123', '/client/client_images/d.jpg', 'dhruv.admin', '12abcd'),
 (2, 'Zaneta Bhagwagar', 'zanetabhagwagar@gmail.com', '7433005558', '', 'Zaneta', 'zaneta123', '/images/t3.jpg', 'zaneta.admin', '123abc');
 
 -- --------------------------------------------------------
@@ -73,8 +73,15 @@ CREATE TABLE `client` (
 INSERT INTO `client` (`CLIENT_ID`, `CLIENT_NAME`, `CLIENT_EMAIL`, `CLIENT_CONTACT`, `CLIENT_PASSWORD`, `CLIENT_STATUS`, `CLIENT_PROFILE_PHOTO`, `CLIENT_SANCTUM_TOKEN`, `CLIENT_TOTAL_SCORE`) VALUES
 (1, 'DHRUV DANI', 'DHRUVBDANI@GMAIL.COM', '7621999436', 'dhruv@2000', 1, '/images/t2.jpg', 0, 200),
 (2, 'ZANETA ', 'ZANETA@GMAIL.COM', '98765432S1', 'zena', 0, '/images/t3.jpg', 0, 0),
-(3, 'NILAY', 'NILAY@GMAIL.COM', '98765432S1', 'NILAY', 1, '/images/t4.jpg', 0, 0),
-(5, 'alpha', 'ALPHA@GMAIL.COM', '', 'alpha', 1, '\\backend assets\\images\\favicon.ico', 0, 0);
+(3, 'NILAYnil123', 'nilay2620@gmail.com', '9727945621', 'NILAY', 1, '/images/t4.jpg', 0, 0),
+(5, 'alpha', 'ALPHA@GMAIL.COM', '', 'alpha', 1, '\\backend assets\\images\\favicon.ico', 0, 0),
+(6, 'Nilay', 'NILAY2620@GMAIL.COM', '', 'nilaythakkar', 1, '/client/client_images/t4.jpg', 0, 0),
+(7, 'nilay2620@gmail.com', 'NILAYTHAKKAR2620@GMAIL.COM', '', 'nilaythakkar', 1, '/backend assets/images/favicon.ico', 0, 0),
+(9, 'feyash', 'FMODI@GMAIL.COM', '', 'feyash1', 1, '/client/client_images/sanctum-default.png', 0, 0),
+(10, 'Jay', 'NILAYNILAY@GMAIL.COM', '', 'd', 1, '/client/client_images/sanctum-default.png', 0, 0),
+(11, 'thakkar', 'thakkar@gmail.com', '', 'thakkar', 1, '/client/client_images/sanctum-default.png', 0, 0),
+(13, 'thakkar', 'thakkar12@gmail.com', '', 'thakkar', 1, '/client/client_images/sanctum-default.png', 0, 0),
+(14, 'thakkar1', 'thakkar123@gmail.com', '', 'thakkar', 1, '/client/client_images/Silver.jpg', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -98,7 +105,8 @@ CREATE TABLE `feedback` (
 INSERT INTO `feedback` (`FEEDBACK_ID`, `FEEDBACK_NAME`, `FEEDBACK_EMAIL`, `FEEDBACK_CONTACT`, `FEEDBACK_MESSAGE`, `FEEDBACK_TIME`) VALUES
 (1, 'dhruv', 'dhruvbdani@gmail.com', 'd', 'hi', '2021-03-14 21:24:08'),
 (2, 'd', 's@gmail.com', '', 'sdsdsdsd', '2021-03-14 21:24:08'),
-(3, 'dani dhruv', 'dhruvbdani@gmail.com', '', 'this is a latest feedback', '2021-03-14 21:28:29');
+(3, 'dani dhruv', 'dhruvbdani@gmail.com', '', 'this is a latest feedback', '2021-03-14 21:28:29'),
+(4, 'Nilay', 'nilay2620@gmail.com', '', 'Good Awesome', '2021-04-18 16:40:10');
 
 -- --------------------------------------------------------
 
@@ -120,8 +128,8 @@ CREATE TABLE `game` (
 --
 
 INSERT INTO `game` (`GAME_ID`, `GAME_NAME`, `GAME_STATUS`, `GAME_DESCRIPTION`, `GAME_PROFILE_IMAGE`, `GAME_CATEGORY`) VALUES
-(1, 'TETRIS', 1, 'Tetris® is the addictive puzzle game that started it all, embracing our universal desire to create order out of chaos.', 'images\\tetris.png', 'DUMMY'),
-(2, 'SNAKE', 1, 'Snake is the common name for a video game concept where the player maneuvers a line which grows in length, with the line itself being a primary obstacle.', 'images\\snake.png', 'DUMMY');
+(1, 'TETRIS', 1, 'Tetris® is the addictive puzzle game that started it all, embracing our universal desire to create order out of chaos.', '\\backend assets\\images\\game\\tetris.png', 'DUMMY'),
+(2, 'SNAKE', 1, 'Snake is the common name for a video game concept where the player maneuvers a line which grows in length, with the line itself being a primary obstacle.', '\\backend assets\\images\\game\\snake.png', 'DUMMY');
 
 -- --------------------------------------------------------
 
@@ -135,6 +143,21 @@ CREATE TABLE `pwdreset` (
   `PWDRESETSELECTOR` text NOT NULL,
   `PWDRESETTOKEN` longtext NOT NULL,
   `PWDRESETEXPIRES` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registration`
+--
+
+CREATE TABLE `registration` (
+  `REGISTRATION_ID` int(11) NOT NULL,
+  `CLIENT_ID` int(11) NOT NULL,
+  `TOURNAMENT_ID` int(11) NOT NULL,
+  `REGISTRATION_DATE` date NOT NULL,
+  `SANCTUM_TRANSACTION_ID` int(11) NOT NULL,
+  `REGISTRATION_AMOUNT` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -164,7 +187,10 @@ INSERT INTO `result` (`RESULT_ID`, `TOURNAMENT_ID`, `CLIENT_ID`, `REWARD_STATUS`
 (12, 3, 2, 0, 2),
 (14, 1, 3, 0, 1),
 (15, 1, 2, 0, 2),
-(16, 1, 1, 0, 3);
+(16, 1, 1, 0, 3),
+(17, 6, 3, 0, 1),
+(18, 6, 1, 0, 2),
+(19, 6, 9, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -194,7 +220,8 @@ INSERT INTO `scoreboard` (`SCOREBOARD_ID`, `CLIENT_ID`, `GAME_ID`, `TOURNAMENT_I
 (7, 3, 1, 1, 4000),
 (8, 2, 1, 1, 6000),
 (9, 2, 1, 1, 5000),
-(10, 3, 1, 1, 7000);
+(10, 3, 1, 1, 7000),
+(11, 3, 1, 6, 1000);
 
 -- --------------------------------------------------------
 
@@ -225,7 +252,8 @@ CREATE TABLE `tournament` (
 INSERT INTO `tournament` (`TOURNAMENT_ID`, `TOURNAMENT_NAME`, `TOURNAMENT_START`, `TOURNAMENT_END`, `TOURNAMENT_STATUS`, `TOURNAMENT_SUBSCRIBERS`, `TOURNAMENT_TOKEN_PRICE`, `TOURNAMENT_DETAILS`, `TOURNAMENT_FIRST_PRIZE`, `TOURNAMENT_SECOND_PRIZE`, `TOURNAMENT_THIRD_PRIZE`, `TOURNAMENT_TREMS`, `TOURNAMENT_REGISTRATION_TILL`) VALUES
 (1, 'APRIL SEASON', '2021-03-02', '2021-03-31', 1, 0, 10, 'OUR VERY FIRST TOURNAMENT.ENJOY PEOPLE!!!', 100, 70, 40, 'THE ONLY CONDITION IS THAT THERE IS NO CONDITION.', '2021-02-28'),
 (2, 'CWL', '2021-02-01', '2021-02-28', 1, 0, 0, '', 0, 0, 0, '0K', '2021-03-31'),
-(3, 'JAN SEASON', '2021-01-01', '2021-01-31', 1, 0, 0, '', 0, 0, 0, 'LOL PPL THIS IS A DUMMY TEXT', '2020-12-31');
+(3, 'JAN SEASON', '2021-01-01', '2021-01-31', 1, 0, 0, '', 0, 0, 0, 'LOL PPL THIS IS A DUMMY TEXT', '2020-12-31'),
+(6, 'Nilay Tha', '2021-04-16', '2021-04-17', 0, 0, 100, 'nothing', 102, 99, 100000, 'No terms', '2021-04-14');
 
 --
 -- Indexes for dumped tables
@@ -260,6 +288,14 @@ ALTER TABLE `game`
 --
 ALTER TABLE `pwdreset`
   ADD PRIMARY KEY (`PWDRESETID`);
+
+--
+-- Indexes for table `registration`
+--
+ALTER TABLE `registration`
+  ADD PRIMARY KEY (`REGISTRATION_ID`),
+  ADD KEY `CLIENT_ID` (`CLIENT_ID`),
+  ADD KEY `TOURNAMENT_ID` (`TOURNAMENT_ID`);
 
 --
 -- Indexes for table `result`
@@ -298,13 +334,13 @@ ALTER TABLE `administrator`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `CLIENT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `CLIENT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `FEEDBACK_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `FEEDBACK_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `game`
@@ -319,26 +355,39 @@ ALTER TABLE `pwdreset`
   MODIFY `PWDRESETID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `registration`
+--
+ALTER TABLE `registration`
+  MODIFY `REGISTRATION_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `result`
 --
 ALTER TABLE `result`
-  MODIFY `RESULT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `RESULT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `scoreboard`
 --
 ALTER TABLE `scoreboard`
-  MODIFY `SCOREBOARD_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `SCOREBOARD_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tournament`
 --
 ALTER TABLE `tournament`
-  MODIFY `TOURNAMENT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `TOURNAMENT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `registration`
+--
+ALTER TABLE `registration`
+  ADD CONSTRAINT `registration_ibfk_1` FOREIGN KEY (`CLIENT_ID`) REFERENCES `client` (`CLIENT_ID`),
+  ADD CONSTRAINT `registration_ibfk_2` FOREIGN KEY (`TOURNAMENT_ID`) REFERENCES `tournament` (`TOURNAMENT_ID`);
 
 --
 -- Constraints for table `result`

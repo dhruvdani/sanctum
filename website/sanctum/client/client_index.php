@@ -1,8 +1,9 @@
 <?php
     $title="Welcome";
-    require_once('/client/client_header.php'); 
-    
-    $row['ADMIN_PROFILE_PHOTO']="../images/t3.jpg";
+	//session_start();
+    require('client_header.php'); 
+	
+    //$row['ADM_PROFILE_PHOTO']="../images/t3.jpg";
 ?>
 
     <style>
@@ -43,9 +44,10 @@
         </div>
         <div class="row" style="padding-top:10rem;padding-bottom:0rem;color:black;background-color:transparent;">
             <div class="out" style="text-align:center;height:auto">
-                <h2 >Zaneta Bhagwagar</h2>
-                <h5>+91 93890 34220</h5>
-                <h5>zaneta@gmail.com</h5>
+                <?php
+                echo "<h2>".$_SESSION["client_name"]."</h2>";
+                echo "<h5>".$_SESSION["client_email"]."</h5>";
+			?>
                 <a href="client_editprofile.php" style="background-color:#F6D3B6;color:#30120D" class="btn">Edit</a>
             </div>
            

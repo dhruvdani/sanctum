@@ -1,7 +1,6 @@
 <?php
     $title="Tournament";
     require_once('header.php');
-
     if(isset($_POST['edit_submit']))
     {   
         $query='update tournament set 
@@ -15,7 +14,7 @@
             TOURNAMENT_THIRD_PRIZE='.$_POST['tournament_third_prize'].',
             TOURNAMENT_TREMS="'.$_POST['tournament_terms'].'",
             TOURNAMENT_DETAILS="'.$_POST['tournament_details'].'"
-            where TOURNAMENT_ID='.$_POST['tournament_id'].';';
+            where TOURNAMENT_ID="'.(int)$_GET['edit_id'].'";';
             //echo $query;
             
             mysqli_query($conn,$query);

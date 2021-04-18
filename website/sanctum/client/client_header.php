@@ -1,8 +1,16 @@
 ﻿<?php 
-        require_once('/backend assets/connection.php');
-        //only for static values 
-        $client_name="Zaneta Bhagwagar";
-        $client_profile="/images/t3.jpg";
+        require('../backend assets/connection.php');
+        //only for static values
+		session_start();
+		if(!isset($_SESSION['client_name']))
+		{
+			header('location:../index.php');
+		}
+		else
+		{
+			$client_name=$_SESSION['client_name'];
+			$client_profile=$_SESSION['client_profile_photo'];
+		}
 ?>
 
 <!DOCTYPE html>

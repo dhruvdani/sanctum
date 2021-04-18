@@ -1,74 +1,76 @@
 <?php
     $title="Client Profile";
-    require_once('/client/client_header.php'); 
+	//session_start();
+    require('client_header.php'); 
 
 
-    // if(isset($_POST['save']))
-    // {
-    //     $username=$_POST['admin_username'];
-    //     if(substr($username,strlen($username)-6,6) != '.admin')
-    //     {
-    //         $username =$username . '.admin';
-    //     }
-    //     $query="UPDATE administrator set ADMIN_NAME = '".$_POST['admin_name']."', ADMIN_USERNAME = '".$username."', 
-    //             ADMIN_EMAIL = '".$_POST['admin_email']."', ADMIN_CONTACT_1 = '".$_POST['admin_contact_1']."', 
-    //             ADMIN_CONTACT_2 = '".$_POST['admin_contact_2']."', ADMIN_MESSAGE = '".$_POST['admin_message']."', 
-    //             ADMIN_RECOVERY_PIN = '".$_POST['admin_recovery_pin']."' WHERE ADMIN_ID = ".$_SESSION['admin_id'].";";
-    //     mysqli_query($conn,$query);
-    // }
+     if(isset($_POST['save']))
+     {
+        $query="UPDATE client set CLIENT_NAME= '".$_POST['client_name']."', 
+        CLIENT_EMAIL = '".$_POST['client_email']."', CLIENT_CONTACT = '".$_POST['client_contact']."' WHERE CLIENT_ID = ".$_SESSION['client_id'].";";
+		mysqli_query($conn,$query);
+		$_SESSION['client_name']=$_POST['client_name'];
+		$_SESSION['client_email']=$_POST['client_email'];
+		$_SESSION['client_contact']=$_POST['client_contact'];
+     }
+	 
 
-    // $error_msg="";
-    // $upload=0;
+     $error_msg="";
+     $upload=0;
 
-    // if(isset($_POST['submit']))
-    // {
-    //     $target_dir = "admin_profile/";
-    //     $target_file = $target_dir . basename($_FILES["profile_photo"]["name"]);
-    //     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    //     //echo $target_file." :: ".$imageFileType;
+     if(isset($_POST['submit']))
+     {
+         $target_dir = "client_images/";
+         $target_file = $target_dir . basename($_FILES["profile_photo"]["name"]);
+         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+         //echo $target_file." :: ".$imageFileType;
         
-    //     // echo "<pre>";
-    //     // print_r($_FILES['profile_photo']);
-    //     $check = getimagesize($_FILES["profile_photo"]["tmp_name"]);
-    //     if($check!==false)
-    //     {
-    //         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" ) 
-    //         {
-    //             $error_msg = "Sorry, only JPG, JPEG & PNG files are allowed.";
-    //             $upload = 0;
-    //         } 
-    //         else
-    //         {
-    //             if(move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $target_file))
-    //             {
-    //                 // echo "The file ". htmlspecialchars( basename( $_FILES["profile_photo"]["name"])). " has been uploaded.<br>";
+         // echo "<pre>";
+         // print_r($_FILES['profile_photo']);
+         $check = getimagesize($_FILES["profile_photo"]["tmp_name"]);
+         if($check!==false)
+         {
+             if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" ) 
+             {
+                 $error_msg = "Sorry, only JPG, JPEG & PNG files are allowed.";
+                 $upload = 0;
+             } 
+             else
+             {
+				         
+				//echo "<pre>";
+				//print_r($_FILES['profile_photo']);
+				//echo "</pre>";
+                 if(move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $target_file))
+                 {
+                      //echo "The file ". htmlspecialchars( basename( $_FILES["profile_photo"]["name"])). " has been uploaded.<br>";
                     
-    //                 if (file_exists($_SERVER['DOCUMENT_ROOT'].$_SESSION['admin_profile_photo'])) 
-    //                 {
-    //                     unlink($_SERVER['DOCUMENT_ROOT'].$_SESSION['admin_profile_photo']);
-    //                 }
-    //                 $_SESSION['admin_profile_photo']=substr($_SERVER['PHP_SELF'],0,strripos($_SERVER['PHP_SELF'],"/")+1).$target_file;
+                     if (file_exists($_SERVER['DOCUMENT_ROOT'].$_SESSION['client_profile_photo'])) 
+                     {
+                         unlink($_SERVER['DOCUMENT_ROOT'].$_SESSION['client_profile_photo']);
+                     }
+                     $_SESSION['client_profile_photo']=substr($_SERVER['PHP_SELF'],0,strripos($_SERVER['PHP_SELF'],"/")+1).$target_file;
 
-    //                 $query="UPDATE administrator set ADMIN_PROFILE_PHOTO = '".substr($_SERVER['PHP_SELF'],0,strripos($_SERVER['PHP_SELF'],"/")+1).$target_file."' where ADMIN_ID = ".$_SESSION['admin_id'].";";
-    //                 mysqli_query($conn,$query);
-    //             } 
-    //             else 
-    //             {
-    //                 $error_msg = "Sorry, there was an error uploading your file.";
-    //                 $upload = 0;
-    //             }
-    //         }
-    //     }
-    //     else
-    //     {
-    //         $error_msg="Please select an image file only.";
-    //     }
-    //     //echo "</pre>";
-    // }
+                     $query="UPDATE client set CLIENT_PROFILE_PHOTO = '".substr($_SERVER['PHP_SELF'],0,strripos($_SERVER['PHP_SELF'],"/")+1).$target_file."' where CLIENT_ID = ".$_SESSION['client_id'].";";
+                     mysqli_query($conn,$query);
+                 } 
+                 else 
+                 {
+                     $error_msg = "Sorry, there was an error uploading your file.";
+                     $upload = 0;
+                 }
+             }
+         }
+         else
+         {
+             $error_msg="Please select an image file only.";
+         }
+         //echo "</pre>";
+     }
 
-    // $query="SELECT * FROM administrator where ADMIN_ID = ".$_SESSION['admin_id'].";";
-    // $result=mysqli_query($conn,$query);
-    // $row=mysqli_fetch_array($result);
+     $query="SELECT * FROM client where CLIENT_ID = ".$_SESSION['client_id'].";";
+     $result=mysqli_query($conn,$query);
+     $row=mysqli_fetch_array($result);
 
 ?>
 
@@ -158,7 +160,7 @@
             <div class="row">
                 <div class="col-md-4 ">
                     <div class="d-flex flex-column align-items-center mt-5 text-center ">
-                        <div class="imgs ratio" style="background-image: url(<?php echo $row['ADMIN_PROFILE_PHOTO']?>);">
+                        <div class="imgs ratio" style="background-image: url(<?php echo $row['CLIENT_PROFILE_PHOTO']?>);">
                             <label for="file-input">
                                 <img class="l" src="img/edit.png"/>
                             </label>
@@ -173,9 +175,9 @@
                                 };
                             </script>
                         </div> 
-                        <span><?php echo (!$upload) ? $error_msg : "" ;?><span>
-                        <br> <p class="font-weight-bold"><?php echo $row['ADMIN_NAME']?></p>
-                        <p class="text-50"><?php echo $row['ADMIN_EMAIL']?></p>
+                        <span><?php echo (!$upload) ? $error_msg : $row['CLENT_PROFILE_PHOTO'] ;?><span>
+                        <br> <p class="font-weight-bold"><?php echo $row['CLIENT_NAME']?></p>
+                        <p class="text-50"><?php echo $row['CLIENT_EMAIL']?></p>
                     </div>  
                 </div>
                 <div class="col-md-1"></div>
@@ -189,14 +191,14 @@
                         </div> -->
                         <form method="POST">
                             <div class="row mt-3">
-                                    <div class="col-md-12"><label class="labels">Name</label><input name="admin_name" type="text" class="form-control" placeholder="Enter name" value="<?php echo $row['ADMIN_NAME']?>"></div>
-                                    <div class="col-md-12"><label class="labels" style="display:block;margin-top:2%;">Username</label><input name="admin_username" type="text" class="form-control" placeholder="Enter name" style="width:90%;display:inline-block" value="<?php echo $row['ADMIN_USERNAME']?>"><span> .admin</span></div>
-                                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" name="admin_email" placeholder="Enter email id" value="<?php echo $row['ADMIN_EMAIL']?>"></div>
-                                    <div class="col-md-12"><label class="labels">Contact Number</label><input type="text" class="form-control" name="admin_contact_1" placeholder="Enter phone number" value="<?php echo $row['ADMIN_CONTACT_1']?>"></div>
+                                    <div class="col-md-12"><label class="labels">Name</label><input name="client_name" type="text" class="form-control" placeholder="Enter name" value="<?php echo $_SESSION['client_name'] ?>"required></div>
+                                    <!--<div class="col-md-12"><label class="labels" style="display:block;margin-top:2%;">Username</label><input name="client_username" type="text" class="form-control" placeholder="Enter username";display:inline-block"></div>-->
+                                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" name="client_email" placeholder="Enter email id" value="<?php echo $_SESSION['client_email'] ?>" required></div>
+                                    <div class="col-md-12"><label class="labels">Contact Number</label><input type="text" class="form-control" name="client_contact" placeholder="Enter phone number" required></div>
                             </div>
                             
                             <div class="mt-5 w-100 text-center"><button class="btn w-100" style="background-color:#30120D;color:white" name="save" type="submit">Save Profile</button></div>
-                            <div class="col-md-12"><a href="forgotpassword.php" style="color:#30120D;padding-top:1rem;float:right;">Forgot password?</a></div>
+                            <!-- <div class="col-md-12"><a href="forgotpassword.php" style="color:#30120D;padding-top:1rem;float:right;">Forgot password?</a></div> -->
 
 
                         </form>
@@ -210,5 +212,5 @@
     </div>
 
 <?php
-    require_once('/client/client_footer.php');
+    require_once('client_footer.php');
 ?>
