@@ -90,12 +90,12 @@
                 </li>
 
             <!-- Nav Item - trans details -->
-                <li class="nav-item">
+                <!--<li class="nav-item">
                     <a class="nav-link " href="admin_trans_details.php">
                         <i class="fas fa-fw fa-credit-card"></i>
                         <span>Transaction Details</span>
                     </a>
-                </li>
+                </li>-->
 
             <!-- Nav Item - Feedback -->
                 <li class="nav-item">

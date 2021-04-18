@@ -28,7 +28,9 @@
         }
         .out .imgg{
             position:relative;
-            bottom:0;
+            bottom:-50%;
+			height:120%;
+			width:50%;
         }
         h2{display:block;}
     </style>
@@ -38,7 +40,7 @@
 
         <div class="row f" ">
             <div class="out g" style="text-align:center">
-                <img src="../images/ts1.jpg"  class="imgg">
+                <img src=<?php echo $_SESSION['client_profile_photo'];?> class="imgg">
             </div>
            
         </div>
