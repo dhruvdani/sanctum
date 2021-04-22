@@ -75,7 +75,7 @@
 
     
     $title="Result";
-    require_once('header.php');
+    require('header.php');
 
     $error_message="Bad Request !";
     $fetch_photo="";
@@ -269,7 +269,7 @@
                                                     <div class="mb-3"><img src="'.$image_1.'" height="50" width="50" style="border-radius:50%;" /></div>
                                                     <div class="h3 mb-1 text-white mt-1">'.$name_1.'</div>
                                                     <div class="mb-1 mt-1" style="color:grey">'.$id_1.'</div>
-                                                    <div class="text-s font-weight-bold mt-3 mb-1 text-white">'.$score_1.'</div>
+                                                    <!--<div class="text-s font-weight-bold mt-3 mb-1 text-white">'.$score_1.'</div>-->
                                                 </div>
                                             </div>
                                         </div>
@@ -288,7 +288,7 @@
                                                 <div class="mb-3"><img src="'.$image_2.'" height="50" width="50" style="border-radius:50%;" /></div>
                                                 <div class="h3 mb-1 text-white mt-1">'.$name_2.'</div>
                                                 <div class="mb-1 mt-1" style="color:grey">'.$id_2.'</div>
-                                                <div class="text-s font-weight-bold mt-3 mb-1 text-white">'.$score_2.'</div>
+                                                <!--<div class="text-s font-weight-bold mt-3 mb-1 text-white">'.$score_2.'</div>-->
                                                 </div>
                                             </div>
                                         </div>
@@ -307,7 +307,7 @@
                                                 <div class="mb-3"><img src="'.$image_3.'" height="50" width="50" style="border-radius:50%;" /></div>
                                                 <div class="h3 mb-1 text-white mt-1">'.$name_3.'</div>
                                                 <div class="mb-1 mt-1" style="color:grey">'.$id_3.'</div>
-                                                <div class="text-s font-weight-bold mt-3 mb-1 text-white">'.$score_3.'</div>
+                                                <!--<div class="text-s font-weight-bold mt-3 mb-1 text-white">'.$score_3.'</div>-->
                                                 </div>
                                             </div>
                                         </div>

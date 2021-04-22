@@ -16,7 +16,6 @@
         echo json_encode($data);
     }
 
-    myclient();
     
     function myclient()
     {
