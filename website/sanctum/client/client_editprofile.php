@@ -21,7 +21,8 @@
      if(isset($_POST['submit']))
      {
          $target_dir = "client_images/";
-         $target_file = $target_dir . basename($_FILES["profile_photo"]["name"]);
+         $target_file = $target_dir . $_SESSION['client_id']."profile.jpg";
+		 //$target_file = $target_dir . basename($_FILES["profile_photo"]["name"]);
          $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
          //echo $target_file." :: ".$imageFileType;
         
@@ -52,7 +53,8 @@
                      $_SESSION['client_profile_photo']=substr($_SERVER['PHP_SELF'],0,strripos($_SERVER['PHP_SELF'],"/")+1).$target_file;
 
                      $query="UPDATE client set CLIENT_PROFILE_PHOTO = '".substr($_SERVER['PHP_SELF'],0,strripos($_SERVER['PHP_SELF'],"/")+1).$target_file."' where CLIENT_ID = ".$_SESSION['client_id'].";";
-                     mysqli_query($conn,$query);
+                     
+					 mysqli_query($conn,$query);
                  } 
                  else 
                  {
@@ -67,7 +69,7 @@
          }
          //echo "</pre>";
      }
-
+	//$error_msg=$query;
      $query="SELECT * FROM client where CLIENT_ID = ".$_SESSION['client_id'].";";
      $result=mysqli_query($conn,$query);
      $row=mysqli_fetch_array($result);
@@ -160,7 +162,7 @@
             <div class="row">
                 <div class="col-md-4 ">
                     <div class="d-flex flex-column align-items-center mt-5 text-center ">
-                        <div class="imgs ratio" style="background-image: url(<?php echo $row['CLIENT_PROFILE_PHOTO']?>);">
+                        <div class="imgs ratio" style="background-image: url('<?php echo $row['CLIENT_PROFILE_PHOTO']?>');">
                             <label for="file-input">
                                 <img class="l" src="img/edit.png"/>
                             </label>
@@ -191,10 +193,17 @@
                         </div> -->
                         <form method="POST">
                             <div class="row mt-3">
+							<?php
+							$query="select CLIENT_CONTACT from client where CLIENT_ID={$_SESSION['client_id']} ";
+							//echo $query;
+							$result=mysqli_query($conn,$query);
+							$row=mysqli_fetch_array($result);
+							
+							?>
                                     <div class="col-md-12"><label class="labels">Name</label><input name="client_name" type="text" class="form-control" placeholder="Enter name" value="<?php echo $_SESSION['client_name'] ?>"required></div>
                                     <!--<div class="col-md-12"><label class="labels" style="display:block;margin-top:2%;">Username</label><input name="client_username" type="text" class="form-control" placeholder="Enter username";display:inline-block"></div>-->
                                     <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" name="client_email" placeholder="Enter email id" value="<?php echo $_SESSION['client_email'] ?>" required></div>
-                                    <div class="col-md-12"><label class="labels">Contact Number</label><input type="text" class="form-control" name="client_contact" placeholder="Enter phone number" required></div>
+                                    <div class="col-md-12"><label class="labels">Contact Number</label><input type="text" class="form-control" name="client_contact" placeholder="Enter phone number" value="<?php echo $row[0] ?>"required></div>
                             </div>
                             
                             <div class="mt-5 w-100 text-center"><button class="btn w-100" style="background-color:#30120D;color:white" name="save" type="submit">Save Profile</button></div>

@@ -1,14 +1,14 @@
 <?php
     $title="Welcome";
-	//session_start();
+	
     require('client_header.php'); 
-    //$row['ADM_PROFILE_PHOTO']="../images/t3.jpg";
+    
 	$query="select CLIENT_SANCTUM_TOKEN from client where CLIENT_ID={$_SESSION['client_id']} ";
 	$result=mysqli_query($conn,$query);
 	$row=mysqli_fetch_array($result);
 	
 	$current_tournament=get_tournament_id();
-	echo $current_tournament;
+	//echo $current_tournament;
 	if($current_tournament!=0)
 	{
 		$query1="select sum(SCORE_TOTAL) from scoreboard where CLIENT_ID={$_SESSION['client_id']} and TOURNAMENT_ID=$current_tournament";
@@ -23,6 +23,11 @@
 	$result2=mysqli_query($conn,$query2);
 	$row2=mysqli_fetch_array($result2);
 	
+    if($row2[0]<1)
+    {
+        $row2[0]="---";
+    }
+    
 	function dateCheck($tournament_end_date)
     {
         $date=substr($tournament_end_date,8,2);
@@ -125,7 +130,9 @@
         }
         .out .imgg{
             position:relative;
-            bottom:0;
+            bottom:-50%;
+            height:120%;
+            width:50%;
         }
         h2{display:block;}
     </style>
@@ -135,7 +142,7 @@
 
         <div class="row f" ">
             <div class="out g" style="text-align:center">
-                <img src="../images/ts1.jpg"  class="imgg">
+                <img src=<?php echo $_SESSION['client_profile_photo'];?>  class="imgg">
             </div>
            
         </div>

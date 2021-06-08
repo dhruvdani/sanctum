@@ -1,5 +1,5 @@
 <?php
-	require_once('backend assets/connection.php');
+	require('backend assets/connection.php');
 	require('backend assets/counter.php');
 ?>
 
@@ -75,11 +75,11 @@
 								<nav>
 									<ul class="nav navbar-nav">
 										<li class="active"><a href="index.php" >Home</a></li>
-										<li><a href="#about" class="scroll" onclick="$('.navbar-toggle').click();">About</a></li>
+										<li><a href="#about" class="scroll" onclick="$('.navbar-toggle').click();">Games</a></li>
 										<li><a href="#gallery" class="scroll" onclick="$('.navbar-toggle').click();">Scoreboard</a></li>
 										<li><a href="#team" class="scroll" onclick="$('.navbar-toggle').click();">Team</a></li>
 										<!-- <li><a href="#blog" class="scroll">Tournament</a></li> -->
-										<li><a href="#mail" class="scroll" onclick="$('.navbar-toggle').click();">Feedback</a></li>
+										<li><a href="#mail" class="scroll" onclick="$('.navbar-toggle').click();">Idea</a></li>
 										<li><a href="#" class="scroll" data-toggle="modal" data-target="#myModal" onclick="$('.navbar-toggle').click();">Log In</a></li>
 									</ul>
 								</nav>
@@ -513,7 +513,7 @@
 	<div class="mail greys" id="mail">
 		<div class="container">
 			<div class="agileits-title">
-				<h3>Feedback</h3>
+				<h3>Ideas for next game?</h3>
 			</div> 
 
 			<div class="w3_mail_grids">
@@ -537,7 +537,7 @@
 							<span class="input__label-content input__label-content--jiro">Contact (Optional)</span>
 						</label>
 					</span>
-					<textarea name="feedback_message" placeholder="Message..." required=""></textarea>
+					<textarea name="feedback_message" placeholder="Your Idea ..." required=""></textarea>
 					<input type="submit" value="Submit">
 				</form>
 			</div>

@@ -203,7 +203,7 @@
                                                     <td>'.$rank.'</td>
                                                     <td>'.$tournament_id.'</td>
                                                     <td>'.$tournament_name.'</td>
-                                                    <td><img style='."height:2.5rem;width:2.5rem;border-radius:50%;".' src="'.$_SESSION["client_profile_photo"].'" ></td>
+                                                    <td><img style='."height:2.5rem;width:2.5rem;border-radius:50%;".' src='.$_SESSION["client_profile_photo"].' ></td>
                                                     <td>'.$_SESSION["client_name"].'</td>
                                                     <td>'.$row1[0].'</td>
                                                     </tr>';
