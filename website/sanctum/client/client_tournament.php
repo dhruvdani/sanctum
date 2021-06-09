@@ -92,7 +92,7 @@
 
             <!-- Main Content -->
             <div id="content">
-
+            <br>
                 <div class="container-fluid" >
                 <style>
                     .table-hover tbody tr:hover td,
@@ -135,8 +135,9 @@
 
                 <div class="card  mb-4" style="color:#261903;border:none;background-color:#6e9673">
                         <div class="card-body ">
+                        
                             <div class="table-responsive">
-                                <div class="dropdown">
+                            <div class="dropdown">
                                     <button class="btn btn-warning dropdown-toggle" style="float:right;background-color:#ffbb02;border:none;text-align:left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <?php echo (isset($_GET['a']))? $_GET['a'] :"Select Tournament"; ?>
                                     </button>

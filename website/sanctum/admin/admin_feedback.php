@@ -1,5 +1,5 @@
 <?php
-    $title="Feedback";
+    $title="Ideas";
     require_once('header.php');
 
     $sql_view='select * from feedback;';

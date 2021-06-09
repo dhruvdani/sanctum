@@ -16,14 +16,14 @@
             //echo '<img height=150px width=150px src="'.$image.'"/>';
             //echo '<img src="data:image/jpeg;base64,'.base64_encode($image->load()) .'" />';
             echo '
-                <li> 
-                    <div class="testimonial-img-grid">
+                <li > 
+                    <div class="testimonial-img-grid" >
                         <div class="testimonial-img t-img1">
                             <img src="image.jpg" alt="" />
                         </div>
                         <!-- //Main icon image -->
-                        <div class="testimonial-img">
-                            <img src="'.$row["GAME_PROFILE_IMAGE"].'" alt="" />
+                        <div class="testimonial-img"  style="width:75%;" >
+                            <img src="'.$row["GAME_PROFILE_IMAGE"].'" alt="" style="border-radius:10px;"/>
                         </div>
                         <div class="testimonial-img t-img2">
                             <img src="image.jpg" alt="" />

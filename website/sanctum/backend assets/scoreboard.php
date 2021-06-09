@@ -116,7 +116,7 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>PROFILE</th>
+                                            <th style="width:10%;">PROFILE</th>
                                             <th>NAME</th>
                                             <th>RANK</th>
                                             <th>SCORE</th>
@@ -148,7 +148,7 @@
             {
                 echo '
                     <tr>
-                    <td><center><img style='."height:20%;width:20%;".' src="'.$row["CLIENT_PROFILE_PHOTO"].'" ></center></td>
+                    <td><img style='."height:100%;width:100%;".' src="'.$row["CLIENT_PROFILE_PHOTO"].'" ></td>
                     <td>'.$row["CLIENT_NAME"].'</td>
                     <td>'.$rank.'</td>
                     <td>'.$row["SCORE_TOTAL"].'</td>

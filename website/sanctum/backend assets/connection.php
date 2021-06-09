@@ -1,5 +1,6 @@
 <?php
 	$server='localhost';
+	//$server="http://01e10b08dfcf.ngrok.io";
 	$password='';
 	$database='sanctum_db';
 	$user='root';
