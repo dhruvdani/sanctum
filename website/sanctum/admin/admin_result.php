@@ -161,17 +161,20 @@
                     // echo "</pre><hr>";
 
                     $rank=1;
+                    $k=1;
                     while($data_result=mysqli_fetch_array($score_data))
                     {
-                        // echo "<pre style='background:white'>";
-                        // print_r($data_result);
-                        // echo "</pre>";
-
+                         //echo "<pre style='background:white'>";
+                         //print_r($data_result);
+                         //echo "</pre>";
+                         
                         $generate_result="INSERT INTO result(TOURNAMENT_ID,CLIENT_ID,REWARD_STATUS,POSITION) values(".$data_result['TOURNAMENT_ID'].",".$data_result['CLIENT_ID'].",0,".$rank.");";
                         mysqli_query($conn,$generate_result);
                         //echo $generate_result;
                         $rank++;
-
+                        $k++;
+                        if($k==4)
+                            break;
                     }
                         $querry_internal="select * from result r, client c where r.CLIENT_ID = c.CLIENT_ID and r.TOURNAMENT_ID = ".$data['TOURNAMENT_ID']." order by r.POSITION;";
                         $internal=mysqli_query($conn,$querry_internal);
@@ -236,6 +239,7 @@
                 
                 if($check)
                 {
+                    $score_1=$score_2=$score_3="";
                     echo '                            
                         <div>
                             <br>
@@ -268,7 +272,7 @@
                                                 <div class="col-auto">
                                                     <div class="mb-3"><img src="'.$image_1.'" height="50" width="50" style="border-radius:50%;" /></div>
                                                     <div class="h3 mb-1 text-white mt-1">'.$name_1.'</div>
-                                                    <div class="mb-1 mt-1" style="color:grey">'.$id_1.'</div>
+                                                    <div class="mb-1 mt-1" style="color:darkblue">'.$id_1.'</div>
                                                     <!--<div class="text-s font-weight-bold mt-3 mb-1 text-white">'.$score_1.'</div>-->
                                                 </div>
                                             </div>
@@ -287,7 +291,7 @@
                                                 <div class="col-auto">
                                                 <div class="mb-3"><img src="'.$image_2.'" height="50" width="50" style="border-radius:50%;" /></div>
                                                 <div class="h3 mb-1 text-white mt-1">'.$name_2.'</div>
-                                                <div class="mb-1 mt-1" style="color:grey">'.$id_2.'</div>
+                                                <div class="mb-1 mt-1" style="color:darkblue">'.$id_2.'</div>
                                                 <!--<div class="text-s font-weight-bold mt-3 mb-1 text-white">'.$score_2.'</div>-->
                                                 </div>
                                             </div>
@@ -306,7 +310,7 @@
                                                 <div class="col-auto">
                                                 <div class="mb-3"><img src="'.$image_3.'" height="50" width="50" style="border-radius:50%;" /></div>
                                                 <div class="h3 mb-1 text-white mt-1">'.$name_3.'</div>
-                                                <div class="mb-1 mt-1" style="color:grey">'.$id_3.'</div>
+                                                <div class="mb-1 mt-1" style="color:darkblue">'.$id_3.'</div>
                                                 <!--<div class="text-s font-weight-bold mt-3 mb-1 text-white">'.$score_3.'</div>-->
                                                 </div>
                                             </div>
