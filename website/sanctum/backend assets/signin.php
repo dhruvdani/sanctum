@@ -39,19 +39,29 @@
         if($result->num_rows > 0)
         {
 			$row=mysqli_fetch_array($result);
-            //start session and redirect to dashboard
-	    session_start();
-            $_SESSION['client_name']=$row['CLIENT_NAME'];
-            $_SESSION['client_email']=$row['CLIENT_EMAIL'];
-            $_SESSION['client_profile_photo']="'".$row['CLIENT_PROFILE_PHOTO']."'";
-            $_SESSION['client_id']=$row['CLIENT_ID'];
-			$_SESSION['client_contact']=$row['CLIENT_CONTACT'];
-            echo "client success";
-	    header('location:../client/client_index.php');
+			$status=$row['CLIENT_STATUS'];
+			echo $status;
+			if($status==1)
+			{
+				//start session and redirect to dashboard
+				session_start();
+				$_SESSION['client_name']=$row['CLIENT_NAME'];
+				$_SESSION['client_email']=$row['CLIENT_EMAIL'];
+				$_SESSION['client_profile_photo']="'".$row['CLIENT_PROFILE_PHOTO']."'";
+				$_SESSION['client_id']=$row['CLIENT_ID'];
+				$_SESSION['client_contact']=$row['CLIENT_CONTACT'];
+				$_SESSION['client_password']=$row['CLIENT_PASSWORD'];
+				echo "client success";
+				header('location:../client/client_index.php');
+			}
+			else	
+			{
+				header('location:/index.php?error_call_back=blocked');
+			}
         }
         else
         {
-            header('location:/index.php?error_call_back=invalid_input');
+				header('location:/index.php?error_call_back=invalid_input');
         }
     }
 ?>

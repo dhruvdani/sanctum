@@ -7,11 +7,12 @@
      if(isset($_POST['save']))
      {
         $query="UPDATE client set CLIENT_NAME= '".$_POST['client_name']."', 
-        CLIENT_EMAIL = '".$_POST['client_email']."', CLIENT_CONTACT = '".$_POST['client_contact']."' WHERE CLIENT_ID = ".$_SESSION['client_id'].";";
+        CLIENT_EMAIL = '".$_POST['client_email']."', CLIENT_CONTACT = '".$_POST['client_contact']."',CLIENT_PASSWORD = '".$_POST['client_password']."' WHERE CLIENT_ID = ".$_SESSION['client_id'].";";
 		mysqli_query($conn,$query);
 		$_SESSION['client_name']=$_POST['client_name'];
 		$_SESSION['client_email']=$_POST['client_email'];
-		$_SESSION['client_contact']=$_POST['client_contact'];
+		$_SESSION['client_contact']=$_POST['client_contact'];	
+		$_SESSION['client_password']=$_POST['client_password'];
      }
 	 
 
@@ -198,13 +199,13 @@
 							//echo $query;
 							$result=mysqli_query($conn,$query);
 							$row=mysqli_fetch_array($result);
-							
 							?>
                                     <div class="col-md-12"><label class="labels">Name</label><input name="client_name" type="text" class="form-control" placeholder="Enter name" value="<?php echo $_SESSION['client_name'] ?>"required></div>
                                     <!--<div class="col-md-12"><label class="labels" style="display:block;margin-top:2%;">Username</label><input name="client_username" type="text" class="form-control" placeholder="Enter username";display:inline-block"></div>-->
                                     <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" name="client_email" placeholder="Enter email id" value="<?php echo $_SESSION['client_email'] ?>" required></div>
                                     <div class="col-md-12"><label class="labels">Contact Number</label><input type="text" class="form-control" name="client_contact" placeholder="Enter phone number" value="<?php echo $row[0] ?>"required></div>
-                            </div>
+									<div class="col-md-12"><label class="labels">Password</label><input type="text" class="form-control" name="client_password" placeholder="Enter Password" value="<?php echo $_SESSION['client_password'] ?>"required></div>
+							</div>
                             
                             <div class="mt-5 w-100 text-center"><button class="btn w-100" style="background-color:#30120D;color:white" name="save" type="submit">Save Profile</button></div>
                             <!-- <div class="col-md-12"><a href="forgotpassword.php" style="color:#30120D;padding-top:1rem;float:right;">Forgot password?</a></div> -->

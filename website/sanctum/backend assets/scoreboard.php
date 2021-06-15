@@ -148,7 +148,7 @@
             {
                 echo '
                     <tr>
-                    <td><img style='."height:100%;width:100%;".' src="'.$row["CLIENT_PROFILE_PHOTO"].'" ></td>
+                    <td><img style='."height:90px;width:90px;".' src="'.$row["CLIENT_PROFILE_PHOTO"].'" ></td>
                     <td>'.$row["CLIENT_NAME"].'</td>
                     <td>'.$rank.'</td>
                     <td>'.$row["SCORE_TOTAL"].'</td>

@@ -1,3 +1,73 @@
+<?php  
+	$error_message="";
+	$flag=false;
+	require('connection.php');
+	if(isset($_POST["request-submit"]))
+	{
+		$user=$_POST['email'];
+		if(strtolower(substr($user,strlen($user)-6,6)) == ".admin")
+		{
+			$query="select * from administrator where ADMIN_USERNAME ='".$user."';";
+			$result=mysqli_query($conn,$query);
+			if($result->num_rows > 0)
+			{
+				$row=mysqli_fetch_array($result);
+				$subject="New password for your sanctum account.";
+				$randomNumber=rand(1000,100000);
+				$password=substr(md5($randomNumber),1,8);
+				$message="Dear ".$row['ADMIN_NAME'].",\n\nYour change password request for sanctum gaming account has been completed successfully.\n\nYour Password for ".$row['ADMIN_NAME']." is: ".$password."\n\nPlease make sure you don't disclose this password to anyone and you can update from client edit section from your dashboard.\n\n\nRegards, \nTeam Sanctum";
+				mail($row['ADMIN_EMAIL'],$subject,$message);  
+				$update="update administrator set ADMIN_PASSWORD='".$password."' where ADMIN_Id='".$row['ADMIN_ID']."';";
+				mysqli_query($conn,$update);
+				$flag=true;
+			}
+			else
+			{
+				$error_message="*You are not an adminstrator user.";
+			}
+		}
+		else
+		{
+			$query="select * from client where CLIENT_EMAIL='".$_POST['email']."';";
+			$result=mysqli_query($conn,$query);
+			
+			if($result->num_rows>0)
+			{
+				$row=mysqli_fetch_array($result);
+				$subject="New password for your sanctum account.";
+				$randomNumber=rand(1000,100000);
+				$password=substr(md5($randomNumber),1,8);
+				$message="Dear ".$row['CLIENT_NAME'].",\n\nYour change password request for sanctum gaming account has been completed successfully.\n\nYour Password for ".$_POST['email']." is: ".$password."\n\nPlease make sure you don't disclose this password to anyone and you can update from client edit section from your dashboard.\n\n\nRegards, \nTeam Sanctum";
+				mail($_POST['email'],$subject,$message);  
+				$update="update client set CLIENT_PASSWORD='".$password."'where CLIENT_Id='".$row['CLIENT_ID']."';";
+				mysqli_query($conn,$update);
+				$flag=true;
+			}
+			else
+			{
+				$error_message="*Your email is not registered with us.";
+			}
+		}
+	}
+	
+	$default='<form method="post">
+            <div class="form-group" >                
+                <label class="h3" for="exampleInputEmail1">Enter your email address and  we will send you a link to reset your password.</label><br>
+                <br><input type="text" name="email" class="form-control form-control-sm" placeholder="Enter your email address"><br>
+				<span style="color:tomato;font-size:1rem;">'.$error_message.'</span><br><br>
+                <button type="submit" id="next-btn" class="btn btn-primary btn-block" name="request-submit">Send password reset email</button>    
+                </div>
+            </form>';
+	$success='<form method="post">
+            <div class="form-group" >                
+                <label class="h3" for="exampleInputEmail1" style="color:green;">New password has been sent to your registered email successfully.</label><br>
+                <br>
+				
+                <center><a type="submit" id="next-btn" class="btn btn-primary btn-block" style="padding:10px 10px;text-decoration:none;" href="../index.php">Go to Sanctum</a>    </center>
+                </div>
+            </form>';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -134,21 +204,9 @@
                 <img src = "/images/logo.png" style="width:20rem" >
             </center>
             <h2>Don't Worry!</h2>
-            <form action="/backend assets/forgotpassword.inc.php">
-                <div class="form-group">
-                    <?php
-                        if(isset($_GET["reset"])){
-                            if($_GET["reset"]=="success"){
-                                echo '<p class="signupsuccess">Check your Email!</p>';
-                            }
-                        }
-                    ?>
-                    <label class="h3" for="exampleInputEmail1">Enter your email address and  we will send you a link to reset your password.</label><br>
-                    <br><input type="email" name="email" class="form-control form-control-sm" placeholder="Enter your email address">
-                    <button type="submit" id="next-btn" class="btn btn-primary btn-block" name="reset-request-submit">Send password reset email</button>    
-                </div>
-            </form>
-
+			
+			<?php echo ($flag)?$success:$default;?>
+            
             <p>Did you remember? <a href="/index.php">Sign In</a></p>
         </div>
     </body>

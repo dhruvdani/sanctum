@@ -42,9 +42,18 @@
         </div>
     </div>
 
+    
+	<script type="text/javascript" src="js/jquery.js"></script>  
+	<script type="text/javascript" src="js/jquery.dataTables.min.js" ></script>  
+	<script type="text/javascript" src="js/dataTables.buttons.min.js"></script>  
+	<script type="text/javascript" src="js/buttons.print.min.js"></script>  
+	
+    <script type="text/javascript" src="js/jszip.min.js"></script>
+    <script type="text/javascript" src="js/pdfmake.min.js"></script>
+    <script type="text/javascript" src="js/vfs_fonts.js"></script>
+    <script type="text/javascript" src="js/buttons.html5.min.js"></script>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -59,13 +68,25 @@
     <!-- Page level custom scripts -->
     
       <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
 
+    <script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable({
+            dom: 'Bfrtip',
+            
+            buttons: [
+                {extend: "pdf", className: "btn btn-light"},
+                {extend: "excel", className: "btn btn-danger"},
+                {extend: "print", className: "btn btn-primary"}
+            ]
+        });
 
-    
+    });
+    </script>
     </body>
     </html>

@@ -15,6 +15,17 @@ for (const param of params) {
     document.getElementById('error_invalid').innerHTML="*Incorrect Id or Password.";
     $('#myModal').modal('show');
     $("#tab-1").prop("checked", true);
+	console.log('problem found');
+	//alert('Invalid Input');
+    break;
+  }
+  else if(param[0].toString()==="error_call_back" && param[1].toString()==="blocked")
+  {
+    document.getElementById('error_invalid').innerHTML="*Your account has been blocked.";
+    $('#myModal').modal('show');
+    $("#tab-1").prop("checked", true);
+	//alert('You are blocked from sanctum.');
+	console.log('problem found');
     break;
   }
 }

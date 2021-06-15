@@ -9,7 +9,10 @@
    
 ?>
 
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">	
+    
+    
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -58,13 +61,13 @@
                     
                 </style>
                     
-                <div class="card  mb-4" style="color:#261903;border:none;background:#6e9673">
+                <div class="card  mb-4" style="color:#261903;border:none;background:#6e9673"  >
                         <!-- <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
                         </div> -->
-                        <div class="card-body ">
-                            <div class="table-responsive">
-                                <table class="table table-hover" id="dataTable" width="100%" style="color:#261903;" cellspacing="0">
+                        <div class="card-body" id="test1">
+                            <div class="table-responsive" id="test">
+                                <table class="table table-hover" id="dataTable" width="100%" style="color:#261903;" cellspacing="0";>
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -118,7 +121,8 @@
                                     <!-- <td><a class='btn' href='#'><i class='fa fa-edit text-white' aria-hidden='true'></i></a></td> -->
 
                                 </table>
-                            </div>
+                            </div>	
+							<!--<button onClick="printContent()">Print</button>-->
                         </div>
                     </div>
 
@@ -130,9 +134,7 @@
         <!-- End of Content Wrapper -->
 
     </div>
-  
-
-
+	
 
 <?php
     require_once('footer.php');
