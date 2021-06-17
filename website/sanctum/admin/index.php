@@ -38,7 +38,7 @@
                             <i class="fas fa-snowflake fa-2x text-white " aria-hidden="true"></i>
                         </div><br>
                         <div class="col-auto">
-                            <div class="text-s font-weight-bold text-uppercase mt-3  mb-1">TOURNAMENT</div>
+                            <div class="text-s font-weight-bold text-white text-uppercase mt-3  mb-1">TOURNAMENT</div>
                         <div class="h1 mb-1  text-white mt-1"><?php echo get_tournament();?></div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                             <i class="fas fa-gamepad fa-2x text-white "></i>
                         </div><br>
                         <div class="col-auto">
-                            <div class="text-s font-weight-bold  text-uppercase mt-3 mb-1">Games</div>
+                            <div class="text-s font-weight-bold text-white text-uppercase mt-3 mb-1">Games</div>
                             <div class="h1 mb-1 text-white mt-1"><?php echo get_game();?></div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                             <i class="fas fa-user-secret fa-2x text-white "></i>
                         </div><br>
                         <div class="col-auto">
-                            <div class="text-s font-weight-bold text-uppercase mt-3 mb-1">USERS</div>
+                            <div class="text-s font-weight-bold text-white text-uppercase mt-3 mb-1">USERS</div>
                         <div class="h1 mb-1 text-white mt-1"><?php echo get_client();?></div>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                             <i class="fas fa-comments fa-2x text-white "></i>
                         </div><br>
                         <div class="col-auto">
-                            <div class="text-s font-weight-bold text-uppercase mt-3 mb-1">FEEDBACK</div>
+                            <div class="text-s font-weight-bold text-white text-uppercase mt-3 mb-1">FEEDBACK</div>
                         <div class="h1 mb-1  text-white mt-1"><?php echo get_feedback();?></div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                             <i class="fas fa-spinner fa-2x text-white "></i>
                         </div><br>
                         <div class="col-auto">
-                        <div class="text-s font-weight-bold text-uppercase mt-3 mb-1">Visitors</div>
+                        <div class="text-s font-weight-bold text-white text-uppercase mt-3 mb-1">Visitors</div>
                         <div class="h1 mb-1  text-white mt-1"><?php echo get_visitor();?></div>
                         </div>
                     </div>
