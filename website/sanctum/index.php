@@ -45,7 +45,15 @@
 		});
 	});
 </script> 
-
+<style>
+        body{
+            -ms-overflow-style:none;
+            scrollbar-width:none;
+        }
+        body::-webkit-scrollbar{display:none;}
+        .nav-link span,
+        .nav-link .fas{color:#fff}
+    </style>
 
 </head>
 <body class="whites">
@@ -468,7 +476,7 @@
 							<h4>Dhruv Dani</h4>
 							<!-- <p>Fusce laoreet</p> -->
 							<ul>
-								<li><a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="https://www.facebook.com/dhruv.dani.564"><i class="fa fa-facebook"></i></a></li>
 								<li><a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
 								<!-- <li><a href=""><i class="fa fa-linkedin-in"></i></a></li> -->
 							</ul>
@@ -482,7 +490,7 @@
 							<h4>Zaneta Bhagwagar</h4>
 							<!-- <p>Fusce laoreet</p> -->
 							<ul>
-								<li><a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="https://www.facebook.com/zaneta.bhagwagar/"><i class="fa fa-facebook"></i></a></li>
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 								<!-- <li><a href="#"><i class="fa fa-rss"></i></a></li> -->
 							</ul>
@@ -496,7 +504,7 @@
 							<h4>Nilay Thakkar</h4>
 							<!-- <p>Fusce laoreet</p> -->
 							<ul>
-								<li><a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="https://www.facebook.com/nilay.thakkar.94"><i class="fa fa-facebook"></i></a></li>
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 								<!-- 	 -->
 							</ul>

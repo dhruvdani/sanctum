@@ -39,7 +39,7 @@
         }
         body::-webkit-scrollbar{display:none;}
         .nav-link span,
-        .nav-link .fas{color:#000}
+        .nav-link .fas{color:#fff}
     </style>
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet">
@@ -48,14 +48,15 @@
 </head>
 
                 
-<body id="page-top" class="text-white" style="background-color:#0C3A2D">
-    
+<body id="page-top"  style="background-color:#00183d">
+    <!-- #0C3A2D -->
     <!-- Page Wrapper -->
     <div id="wrapper" >
 
         <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion " style="background-color:#E48F3A" id="accordionSidebar">
+        <ul class="navbar-nav sidebar sidebar-dark accordion " style="background-color:#00183d" id="accordionSidebar">
         <!-- B46617 -->
+        <!-- #E48F3A -->
             <!-- Sidebar - Brand -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center " href="../index.php">
                     <div class="">
@@ -101,7 +102,7 @@
                 <li class="nav-item">
                 <a class="nav-link " href="admin_feedback.php" >
                         <i class="fas fa-fw fa-paperclip"></i>
-                        <span>Feedback</span>
+                        <span>Ideas</span>
                     </a>
                 </li>               
             
@@ -154,17 +155,19 @@
         <!-- 0deg, #ff0043 0%, #000000 100% -->
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column" style="background-color:#0C3A2D; ">
-        <!-- rgb(255, 0, 85); -->
+        <div id="content-wrapper" class="d-flex flex-column" style="background-color:#e5e5e5; ">
+        <!-- rgb(255, 0, 85);#0C3A2D -->
+        
             <!-- Main Content -->
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand topbar mb-4 static-top shadow" style="background-color:white;color:#B46617;">
+                <nav class="navbar navbar-expand topbar mb-4 static-top shadow" style="background-color:none;color:#0f1225;">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars" style="#B36618"></i>
+                        <i class="fa fa-bars" style="#0f1225"></i>
+                        <!-- #B36618 -->
                     </button>
 
                     <!-- Topbar Navbar -->
@@ -175,8 +178,8 @@
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow" >
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-caret-down"style="color:#B36618;"></i>&emsp;
-                                    <span class="mr-2 d-none d-lg-inline small" style="color:#B36618;font-weight:bold"><?php echo $admin_name?></span>
+                                    <i class="fas fa-caret-down"style="color:#0f1225;"></i>&emsp;
+                                    <span class="mr-2 d-none d-lg-inline small" style="color:#0f1225;font-weight:bold"><?php echo $admin_name?></span>
                                     <img class="img-profile rounded-circle"
                                         src=<?php echo $admin_profile; ?>>
                                 </a>
@@ -206,7 +209,7 @@
                     </ul>
 
                 </nav>
-                <h3 class="m-4 "><?php echo $title?></h3>
+                <h3 class="m-4 " style="color:#00183D"><?php echo $title?></h3>
                 <!-- other part of body like dashboard with php -->
 
             

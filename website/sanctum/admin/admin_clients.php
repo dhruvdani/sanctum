@@ -36,7 +36,8 @@
                     .table-hover tbody tr:hover td,
                     .table-hover tbody tr:hover th {
                         font-weight :700 ; 
-                        background-color: rgba(0, 0, 0, 0.32);
+                        background-color: rgba(153, 164, 196,0.7);
+                        /* rgba(0, 0, 0, 0.12); */
                         color:white;
                     }   
                     .pagination > li > a
@@ -69,7 +70,7 @@
                     
                 </style>
                     
-                <div class="card mb-4 " style="color:#261903;border:none;background-color:#6E9673">
+                <div class="card mb-4 " style="color:#261903;border:none;background-color:#ced8e8">
                         <!-- <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
                         </div> -->

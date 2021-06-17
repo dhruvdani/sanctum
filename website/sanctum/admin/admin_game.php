@@ -12,36 +12,12 @@
     .table-hover tbody tr:hover td,
     .table-hover tbody tr:hover th {
         font-weight :700 ; 
-        background-color: rgba(0, 0, 0, 0.32);
+                   
+        background-color: rgba(153, 164, 196,0.7);
         color:white;
-    }   
-    .pagination > li > a
-    {
-        background-color: white;
-        color:#261903;
-    }
-    .pagination > li > a:focus,
-    .pagination > li > a:hover,
-    .pagination > li > span:focus,
-    .pagination > li > span:hover
-    {
-        color: #FFBB02;
-        background-color: #eee;
-        border-color:NONE;
-    }
-
-    .pagination > .active > a
-    {
-        color: white;
-        background-color: #FFBB02 !Important;
-        border: solid 1px #FFBB02 !Important;
-    }
-
-    .pagination > .active > a:hover
-    {
-        background-color: #FFBB02 !Important;
-        border: solid 1px #FFBB02;
-    }
+    }  
+    
+    
     select > option{color:white;}
 </style>
 
@@ -53,16 +29,16 @@ $("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
       .toggleClass("fa-minus fa-plus");
  });
 </script>
-
-<div class="container-fluid myaccordion" id="accordion">
+<!-- add game -->
+<div class="container-fluid myaccordion" id="accordion" >
     <!-- Collapsable Card Example -->
-    <div class="card shadow mb-4" style="background-color:transparent">
+    <div class="card shadow mb-4 " style="background-color:#ced8e8;color:#00183D;border:solid skyblue 2px">
         <!-- Card Header - Accordion -->
-        <a href="#collapseCardExample" class="d-block bg-transparent card-header py-3" style="border:none" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-            <h6 class="m-0 font-weight-bold text-white" >New Game</h6>
+        <a href="#collapseCardExample" class="d-block  card-header py-3" style="border:none;color:#00183D;background-color :transparent;" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+            <h6 class="m-0 font-weight-bold">New Game</h6>
         </a>
         <!-- Card Content - Collapse -->
-        <div class="card-body container collapse mb-3" id="collapseCardExample" data-parent="#accordion">
+        <div class="card-body container collapse mb-3"  id="collapseCardExample" data-parent="#accordion">
 
             <form method="post" enctype="multipart/form-data" action="game_manager.php?section=add">
             
@@ -127,6 +103,8 @@ $("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
         </div>
     </div> -->
 </div>  
+<!-- add game -->
+<!-- table -->
 <div id="wrapper" ">
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column" style="background-color:transparent ">
@@ -136,7 +114,7 @@ $("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
 
             <div class="container-fluid" >
                 <!-- table -->
-                <div class="card mb-4 " style="color:#261903;border:none;background-color:#6E9673;">
+                <div class="card mb-4 " style="color:#261903;border:none;background-color:#ced8e8;">
                     <div class="card-body ">
                         <div class="table-responsive">
                             <table class="table table-hover" id="dataTable" style="color:#261903;" width="100%" cellspacing="0" >
@@ -192,9 +170,8 @@ $("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
             </div>  
         </div>
     </div>
-
 </div>
-
+<!-- table -->
 <script>
 
     const params = new URLSearchParams(window.location.search)

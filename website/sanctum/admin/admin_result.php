@@ -77,7 +77,7 @@
     $title="Result";
     require('header.php');
 
-    $error_message="Bad Request !";
+    $error_message="Please select tournament first!";
     $fetch_photo="";
     $tournament_name=$torunament_end_date=$torunament_start_date=$torunament_id="";
     $sql_view='select * from tournament;';
@@ -211,7 +211,7 @@
    <div id="wrapper" ">
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column" style="background-color:transparent" >
+        <div id="content-wrapper" class="d-flex flex-column" style="background-color:transparent;color:#261903" >
 
             <!-- Main Content -->
             <div id="content">
@@ -219,7 +219,7 @@
                 <div class="container-fluid" >
                 
                 <div class="row mb-2">
-                    <button class="btn btn-warning dropdown-toggle" style="float:right;background-color:#ffbb02;border:none;text-align:left;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-primary dropdown-toggle" style="float:right;border:none;text-align:left;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <?php echo (isset($_GET['tournament_name']))? $_GET['tournament_name'] : "Select Tournament"; ?>
                     </button>
 
@@ -234,7 +234,7 @@
                     
                 </div>
                 
-                <div class="card row mb-4" style="color:#261903;border:none;background-color:#6E9673">
+                <div class="card row mb-4" style="color:#261903;border:none;background-color:#ced8e8">
                 <?php 
                 
                 if($check)
@@ -243,9 +243,9 @@
                     echo '                            
                         <div>
                             <br>
-                            <h2 style="color:white;text-align:center" ><?php echo $torunament_name;?></h2>
+                            <h1 style="text-align:center;color:#261903;font-weight:700" >'.$torunament_name.'</h1>
                             <hr>
-                            <div class="row text-white">
+                            <div class="row ">
                                 <div class="col-sm-6" style="padding-left:10rem;">
                                     <label style="font-weight:bold">Tournament Id:</label>
                                     <label>'.$torunament_id.'</label><br>
@@ -328,7 +328,7 @@
                 {
                     echo '<div>
                             <br>
-                            <h2 style="color:white;text-align:center" >'.$error_message.'</h2>
+                            <h2 style="text-align:center" >'.$error_message.'</h2>
                             <hr>
                         </div>';
                 }

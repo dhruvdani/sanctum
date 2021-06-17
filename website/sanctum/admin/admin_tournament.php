@@ -51,36 +51,10 @@
     .table-hover tbody tr:hover td,
     .table-hover tbody tr:hover th {
         font-weight :700 ; 
-        background-color: rgba(0, 0, 0, 0.32);
+        background-color: rgba(153,164,196,0.7);
         color:white;
     }   
-    .pagination > li > a
-    {
-        background-color: white;
-        color:#261903;
-    }
-    .pagination > li > a:focus,
-    .pagination > li > a:hover,
-    .pagination > li > span:focus,
-    .pagination > li > span:hover
-    {
-        color: #FFBB02;
-        background-color: #eee;
-        border-color:NONE;
-    }
-
-    .pagination > .active > a
-    {
-        color: white;
-        background-color: #FFBB02 !Important;
-        border: solid 1px #FFBB02 !Important;
-    }
-
-    .pagination > .active > a:hover
-    {
-        background-color: #FFBB02 !Important;
-        border: solid 1px #FFBB02;
-    }
+    
     select > option{color:white;}
 </style>
 
@@ -93,12 +67,12 @@ $("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
   });
 </script>
 
-<div class="container-fluid myaccordion" id="accordion">
+<div class="container-fluid myaccordion" id="accordion" style="color:#00183D;">
     <!-- Collapsable Card Example -->
-    <div class="card shadow mb-4" style="background-color:transparent">
+    <div class="card shadow mb-4" style="background-color:#ced8e8;border:solid skyblue 2px">
         <!-- Card Header - Accordion -->
-        <a href="#collapseCardE" class="d-block bg-transparent card-header py-3" style="border:none" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardE">
-            <h6 class="m-0 font-weight-bold text-white" >Add Tournament</h6>
+        <a href="#collapseCardE" class="d-block bg-transparent card-header py-3" style="border:none;color:#00183d" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardE">
+            <h6 class="m-0 font-weight-bold " >Add Tournament</h6>
         </a>
         <!-- Card Content - Collapse -->
         <div class="collapse mb-3" id="collapseCardE" data-parent="#accordion">
@@ -145,10 +119,10 @@ $("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
         
     </div>
     
-    <div class="card shadow mb-4" style="background-color:transparent">
+    <div class="card shadow mb-4" style="background-color:#ced8e8;border:solid skyblue 2px">
         <!-- Card Header - Accordion -->
-        <a href="#collapseCardExample" class="d-block bg-transparent card-header py-3" style="border:none" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-            <h6 class="m-0 font-weight-bold text-white" >Edit Tournament</h6>
+        <a href="#collapseCardExample" class="d-block bg-transparent card-header py-3" style="border:none;color:#00183d;border:none" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+            <h6 class="m-0 font-weight-bold " >Edit Tournament</h6>
         </a>
         <!-- Card Content - Collapse -->
         <div class="collapse mb-3" id="collapseCardExample" data-parent="#accordion">
@@ -232,7 +206,7 @@ $("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
 
                 </style>
                 <!-- table -->
-                <div class="card mb-4 " style="color:#261903;border:none;background:#6e9673">
+                <div class="card mb-4 " style="color:#261903;border:none;background-color:#ced8e8">
                     <div class="card-body ">
                         <div class="table-responsive">
                             <table class="table table-hover " style="color:#261903;" id="dataTable" width="100%" cellspacing="0" >
