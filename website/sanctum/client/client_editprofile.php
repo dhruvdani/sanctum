@@ -195,7 +195,7 @@
                         <form method="POST">
                             <div class="row mt-3">
 							<?php
-							$query="select CLIENT_CONTACT from client where CLIENT_ID={$_SESSION['client_id']} ";
+							$query="select CLIENT_CONTACT,CLIENT_PASSWORD from client where CLIENT_ID={$_SESSION['client_id']} ";
 							//echo $query;
 							$result=mysqli_query($conn,$query);
 							$row=mysqli_fetch_array($result);
@@ -204,7 +204,7 @@
                                     <!--<div class="col-md-12"><label class="labels" style="display:block;margin-top:2%;">Username</label><input name="client_username" type="text" class="form-control" placeholder="Enter username";display:inline-block"></div>-->
                                     <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" name="client_email" placeholder="Enter email id" value="<?php echo $_SESSION['client_email'] ?>" required></div>
                                     <div class="col-md-12"><label class="labels">Contact Number</label><input type="text" class="form-control" name="client_contact" placeholder="Enter phone number" value="<?php echo $row[0] ?>"required></div>
-									<div class="col-md-12"><label class="labels">Password</label><input type="text" class="form-control" name="client_password" placeholder="Enter Password" value="<?php echo $_SESSION['client_password'] ?>"required></div>
+									<div class="col-md-12"><label class="labels">Password</label><input type="text" class="form-control" name="client_password" placeholder="Enter Password" value="<?php echo $row['CLIENT_PASSWORD'] ?>"required></div>
 							</div>
                             
                             <div class="mt-5 w-100 text-center"><button class="btn w-100" style="background-color:#30120D;color:white" name="save" type="submit">Save Profile</button></div>
