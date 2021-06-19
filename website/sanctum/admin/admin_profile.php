@@ -84,7 +84,7 @@
                 border-color: #BA68C8
             }
     
-            .profile-button {
+            /* .profile-button {
                 background:rgb(99, 39, 120);
                 box-shadow: none;
                 border: none;
@@ -103,7 +103,7 @@
             .profile-button:active{
                 background: #682752;
                 box-shadow: none
-            }
+            } */
     
             .labels {
                 font-size: 11px;
@@ -114,7 +114,7 @@
                 /* background: linear-gradient(0deg, rgba(255,0,67,0.25) 0%, rgba(0,0,0,0.5692493567306004) 100%); */
 
                 /* background-color:rgba(43, 0, 44, 0.35); */
-                background-color:#6E9673;
+                background-color:#ced8e8;
                 color:#261903;
                 
             }
@@ -146,8 +146,8 @@
             .imgs .l{
                 width: 50px;
                 cursor: pointer;
-                border: 2px solid bisque;
-                background-color:#ffbb02;
+                border: 2px solid #00183D;
+                background-color:#00183D;
             }
         </style>
        
@@ -197,7 +197,7 @@
                                     <div class="col-md-12"><label class="labels">Recovery Pin</label><input maxlength="6" type="text" class="form-control" placeholder="Security Pin" name="admin_recovery_pin" value="<?php echo $row['ADMIN_RECOVERY_PIN']?>"></div>
                             </div>
                             
-                            <div class="mt-5 w-100 text-center"><button class="btn w-100" style="background-color:#FFBB02;color:white" name="save" type="submit">Save Profile</button>
+                            <div class="mt-5 w-100 text-center"><button class="btn w-100" style="background-color:#00183D;color:white" name="save" type="submit">Save Profile</button>
                         </form>
                         </div> 
                     </div>
