@@ -3,7 +3,7 @@
 	$password='';
 	$database='sanctum_db';
 	
-	$conn=mysqli_connect($server,'root',$password,$database);
+	$conn=mysqli_connect($server,'root',$password,$database,3308);
 	
 	if(!$conn)
 	{
