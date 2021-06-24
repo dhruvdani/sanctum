@@ -8,6 +8,8 @@
 <html lang="en">
 <head>
 <title>Sanctum</title>
+<link rel="icon" href="images/logo3.png">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <meta name="keywords" content="Gaming Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
@@ -361,7 +363,7 @@
 												<label for="pass" class="label">Password</label>
 												<input name="signin_password" type="password" class="inputs" data-type="password">
 											</div>
-											<div class="group">
+											<div class="group" hidden>
 												<input name="signin_keep" type="checkbox" checked>
 												<label style="color:white"> Remember me</label>
 												<label id="error_invalid" style="color:orange;" class="label"></label>

@@ -25,6 +25,7 @@
     <meta name="author" content="">
     
     <title>Sanctum - <?php echo $title ?></title>
+    <link rel="icon" href="images/logo3.png">
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

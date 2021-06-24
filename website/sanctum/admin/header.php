@@ -18,14 +18,16 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="images/logo3.png">
+    <title>Sanctum - <?php echo $title ?></title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+
     
-    <title>Sanctum - <?php echo $title ?></title>
     <!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">-->
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

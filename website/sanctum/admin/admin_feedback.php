@@ -6,7 +6,11 @@
     $result=mysqli_query($conn,$sql_view);
     $resultcheck=mysqli_num_rows($result);
     
+    $query ='delete from feedback where feedback_id="'.$_GET['idea_id'].'";';
+    mysqli_query($conn,$query);
+    // header("location:admin/admin_feedback.php");
    
+
 ?>
 
 
@@ -16,7 +20,6 @@
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column"  style="background-color:transparent">
-
             <!-- Main Content -->
             <div id="content">
 
@@ -80,7 +83,7 @@
                                                     <td>".$fetch_contact."</td>
                                                     <td>".$fetch_time."</td>
                                                     <td>".$fetch_message."</td>
-                                                    <td></td>
+                                                    <td><a class='btn btn-info btn-sm' href='admin_feedback.php?idea_id=".$fetch_id."'><i class='fa fa-trash text-white' aria-hidden='true'></i></a></td> 
 
                                                </tr>";
                                             }
