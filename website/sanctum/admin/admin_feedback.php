@@ -5,9 +5,12 @@
     $sql_view='select * from feedback;';
     $result=mysqli_query($conn,$sql_view);
     $resultcheck=mysqli_num_rows($result);
-    
-    $query ='delete from feedback where feedback_id="'.$_GET['idea_id'].'";';
-    mysqli_query($conn,$query);
+    if(isset($_GET['idea_id']))
+    {
+        $query ='delete from feedback where feedback_id="'.$_GET['idea_id'].'";';
+        mysqli_query($conn,$query);
+        echo "<script>location.href='./admin_feedback.php'</script>";
+    }
     // header("location:admin/admin_feedback.php");
    
 

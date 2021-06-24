@@ -4,7 +4,7 @@
 	$password='';
 	$database='sanctum_db';
 	$user='root';
-	$conn=mysqli_connect($server,$user,$password,$database);
+	$conn=mysqli_connect($server,$user,$password,$database,3308);
 	
 	if(!$conn)
 	{

@@ -366,6 +366,8 @@
 											<div class="group" hidden>
 												<input name="signin_keep" type="checkbox" checked>
 												<label style="color:white"> Remember me</label>
+											</div>
+											<div class="group">
 												<label id="error_invalid" style="color:orange;" class="label"></label>
 											</div>
 											<div class="group">

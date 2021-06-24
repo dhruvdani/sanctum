@@ -135,10 +135,10 @@
             }
             else
             {
+                
                 $start_val=dateCheck($data['TOURNAMENT_START']);
                 $end_val=dateCheck($data['TOURNAMENT_END']);
                 
-
                 $error_message="Result not Published Yet.";
                 if(($start_val==0) || ($end_val==1 && $start_val==-1) || $end_val==0){
                     $check=false;
@@ -198,6 +198,11 @@
                         $score_3=0002;
 
                     $error_message="Result is ready to publish.";
+                }
+                else
+                {
+                    $check=false;
+                    $error_message="Result not Published Yet.";
                 }
             }
     }
@@ -328,6 +333,7 @@
                 {
                     echo '<div>
                             <br>
+                            <hr>
                             <h2 style="text-align:center" >'.$error_message.'</h2>
                             <hr>
                         </div>';

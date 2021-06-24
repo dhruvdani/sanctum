@@ -14,7 +14,7 @@
 		$query1="select sum(SCORE_TOTAL) from scoreboard where CLIENT_ID={$_SESSION['client_id']} and TOURNAMENT_ID=$current_tournament";
 		$result1=mysqli_query($conn,$query1);
 		$row1=mysqli_fetch_array($result1);
-		$value=$row1[0];
+		$value=($row1[0]!=null)?$row1[0]:'---';
 	}
 	else
 		$value="---";
