@@ -40,11 +40,11 @@
         body::-webkit-scrollbar{display:none;}
         .nav-link span,
         .nav-link .fas{color:#fff}
+        
     </style>
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
 </head>
 
                 
@@ -69,8 +69,8 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.php">
+                <li class="nav-item">
+                    <a class="nav-link " href="index.php">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Dashboard</span>
                     </a>
@@ -153,7 +153,7 @@
         </ul>
         <!-- End of Sidebar -->
         <!-- 0deg, #ff0043 0%, #000000 100% -->
-
+        
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column" style="background-color:#e5e5e5; ">
         <!-- rgb(255, 0, 85);#0C3A2D -->

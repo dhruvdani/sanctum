@@ -98,7 +98,7 @@
                     .table-hover tbody tr:hover td,
                     .table-hover tbody tr:hover th {
                         font-weight :700 ; 
-                        background-color: rgba(0, 0, 0, 0.32);
+                        background-color: rgba(255 ,55,25, 0.2);
                         color:white;
                     }   
                     .pagination > li > a
@@ -111,7 +111,7 @@
                     .pagination > li > span:focus,
                     .pagination > li > span:hover
                     {
-                        color: #FFBB02;
+                        color: maroon;
                         background-color: #eee;
                         border-color:NONE;
                     }
@@ -119,26 +119,26 @@
                     .pagination > .active > a
                     {
                         color: white;
-                        background-color: #FFBB02 !Important;
-                        border: solid 1px #FFBB02 !Important;
+                        background-color: red !Important;
+                        border: solid 1px red !Important;
                     }
 
                     .pagination > .active > a:hover
                     {
-                        background-color: #FFBB02 !Important;
-                        border: solid 1px #FFBB02;
+                        background-color: maroon !Important;
+                        border: solid 1px maroon;
                     }
                     .dataTables_filter {
                         display: none;
                     }
                 </style>
 
-                <div class="card  mb-4" style="color:#261903;border:none;background-color:#6e9673">
+                <div class="card  mb-4" style="color:#261903;border:none;background-color:#ffc6c6">
                         <div class="card-body ">
                         
                             <div class="table-responsive">
                             <div class="dropdown">
-                                    <button class="btn btn-warning dropdown-toggle" style="float:right;background-color:#ffbb02;border:none;text-align:left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn btn-danger dropdown-toggle" style="float:right;border:none;background-color:#ed0000;text-align:left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <?php echo (isset($_GET['a']))? $_GET['a'] :"Select Tournament"; ?>
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

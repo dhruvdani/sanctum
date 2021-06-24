@@ -80,7 +80,7 @@
         return 0;
     }
 			$current_tournament_id=get_tournament_id();
-			
+			//$a=$b=[];
 			if($current_tournament_id==0)
 			{
 				//echo $current_tournament_id;
@@ -90,10 +90,10 @@
 			}
 			else
 			{
-				//$id=$_POST['client_id'];
-				$id=1;
-				$a;$b;
-				$rank="--";
+				$id=$_POST['client_id'];
+				//$id=23;
+				$a=[];$b=[];
+				$rank=-1;
 				$flag=0;
 				$query="select s.CLIENT_ID,c.CLIENT_NAME,s.TOURNAMENT_ID,sum(s.SCORE_TOTAL)as 'SCORE_TOTAL',c.CLIENT_TOTAL_SCORE from scoreboard as s,
 				client as c,tournament as t

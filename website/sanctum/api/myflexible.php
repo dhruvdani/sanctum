@@ -81,7 +81,7 @@
     }
 			$current_tournament_id=get_tournament_id();
 			$id=$_POST['client_id'];
-			//$id=1;
+			// $id=23;
 			$rank="--";
 			$current_tournament_name="No Active Tournament";
 			
@@ -116,10 +116,11 @@
 			if($result->num_rows > 0)
 			{
 				$row=mysqli_fetch_array($result);
-				
+				$data=array($current_tournament_name,strval($rank),$row['total']);
 			}
+			else{$data=array($current_tournament_name,strval($rank),null);}
 			
-			$data=array($current_tournament_name,strval($rank),$row['total']);
+			
 			//$data=array(array($row['CLIENT_NAME']),array($row['SCORE_TOTAL']),$c);
 			//header('content-type:application/json');
 			echo json_encode($data);

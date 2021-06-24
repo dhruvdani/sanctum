@@ -194,7 +194,7 @@
                                     <div class="col-md-12"><label class="labels">Contact Number</label><input type="text" class="form-control" name="admin_contact_1" placeholder="Enter phone number" value="<?php echo $row['ADMIN_CONTACT_1']?>"></div>
                                     <div class="col-md-12"><label class="labels">Alternate Number</label><input type="text" class="form-control" name="admin_contact_2" placeholder="Enter alternate number" value="<?php echo $row['ADMIN_CONTACT_2']?>"></div>
                                     <div class="col-md-12"><label class="labels">Bio</label><input type="textarea" class="form-control" placeholder="Bio" name="admin_message" value="<?php echo $row['ADMIN_MESSAGE']?>"></div>
-                                    <div class="col-md-12" hidden><label class="labels">Recovery Pin</label><input maxlength="6" type="text" class="form-control" placeholder="Security Pin" name="admin_recovery_pin" value="<?php echo $row['ADMIN_RECOVERY_PIN']?>"></div>
+                                    <div class="col-md-12"><label class="labels">Recovery Pin</label><input maxlength="6" type="text" class="form-control" placeholder="Security Pin" name="admin_recovery_pin" value="<?php echo $row['ADMIN_RECOVERY_PIN']?>"></div>
                             </div>
                             
                             <div class="mt-5 w-100 text-center"><button class="btn w-100" style="background-color:#00183D;color:white" name="save" type="submit">Save Profile</button>

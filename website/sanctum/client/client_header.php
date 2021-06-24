@@ -38,7 +38,7 @@
         }
         body::-webkit-scrollbar{display:none;}
         .nav-link span, 
-        .nav-link .fas{color:#F2D3CF;}
+        .nav-link .fas{color:white;}
     </style>
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet">
@@ -50,13 +50,13 @@
 </head>
 
                 
-<body id="page-top" class="" style="background-color:#0C3A2D">
+<body id="page-top"  style="background-color:#DB8A80">
     
     <!-- Page Wrapper -->
     <div id="wrapper" >
 
     <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion " style="background-color:#31120D" id="accordionSidebar">
+        <ul class="navbar-nav sidebar sidebar-dark accordion " style="background-color:#31120D;" id="accordionSidebar">
             <!-- B46617 -->
             <!-- Sidebar - Brand -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center " href="../index.php">
@@ -70,7 +70,7 @@
             <!-- <hr class="sidebar-divider my-0"> -->
 
             <!-- Nav Item - Dashboard -->
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="client_index.php">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Dashboard</span>

@@ -43,15 +43,15 @@ $("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
             <form method="post" enctype="multipart/form-data" action="game_manager.php?section=add">
             
                 <div class="row">
-                    <div class="col-xl-12"><label for="g_name">Name </label><input type="text" name="game_name" id="game_name" class="form-control" placeholder="Enter game name"/></div>
+                    <div class="col-xl-12"><label for="g_name">Name </label><input type="text" name="game_name" id="game_name" class="form-control" placeholder="Enter game name" required/></div>
                     </div>
                 <div class="row">
                     <!-- <div class="col-xl-6 mt-2"><label for="g_status">Status</label><input type="text" name="game_status" id="game_status" class="form-control" placeholder="Enter game status"/></div> -->
-                    <div class="col-xl-12 mt-2"><label for="g_description">Description</label><input type="text" name="game_description" id="game_description" class="form-control" placeholder="Enter game description"/></div>
+                    <div class="col-xl-12 mt-2"><label for="g_description">Description</label><input type="text" name="game_description" id="game_description" class="form-control" placeholder="Enter game description" required/></div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-6 mt-2"><label for="g_image">Profile Image</label><input type="file" name="game_image" id="game_image" class="form-control"/></div>
-                    <div class="col-xl-6 mt-2"><label for="g_category">Category</label><br><input type="text" name="game_category" id="game_category" class="form-control" placeholder="Enter category of game"/></div>
+                    <div class="col-xl-6 mt-2"><label for="g_image">Profile Image</label><input type="file" name="game_image" id="game_image" class="form-control" required/></div>
+                    <div class="col-xl-6 mt-2"><label for="g_category">Category</label><br><input type="text" name="game_category" id="game_category" class="form-control" placeholder="Enter category of game" required/></div>
                 </div>
                     <!-- buttons -->
                     <div class="row mt-4 float-right">

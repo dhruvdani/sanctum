@@ -125,7 +125,7 @@
 
             position:relative;
             margin:0 auto;
-            width:20rem;
+            width:25rem;
             height:10rem;
         }
         .out .imgg{

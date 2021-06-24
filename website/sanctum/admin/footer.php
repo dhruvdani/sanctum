@@ -76,6 +76,10 @@
 
     <script>
     $(document).ready(function() {
+        $("ul.navbar-nav > li").click(function (e) {
+                $(this).addClass("active");
+                $("ul.navbar-nav > li").not(this).removeClass("active");
+        });
         $('#dataTable').DataTable({
             dom: 'Bfrtip',
             
@@ -85,8 +89,9 @@
                 {extend: "print", className: "btn btn-primary"}
             ]
         });
-
+       
     });
+    
     </script>
     </body>
     </html>
