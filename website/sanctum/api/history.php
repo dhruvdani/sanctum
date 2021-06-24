@@ -4,10 +4,11 @@
 	
 		$id=$_POST['client_id'];
 		//$id=1;
-		//$a=["true"];$b=["true"];$c=["true"];
+		//$a=["false"];$b=["true"];$c=["true"];
 		$query="SELECT * from tournament order by TOURNAMENT_END desc";
 		$res=mysqli_query($conn,$query);
 		//$f=0;
+		$a=$b=$c=[];
 		$row=mysqli_fetch_array($res);
 		$row=mysqli_fetch_array($res);
 		
@@ -64,7 +65,8 @@
 	{
 		$data=array(["false"],["false"],["false"]);
 	}
-	else{
+	else
+	{
 		$data=array($c,$a,$b);
 	}
 	header('content-type: application/json');
