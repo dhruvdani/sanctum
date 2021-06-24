@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3308
--- Generation Time: Jun 24, 2021 at 05:48 PM
--- Server version: 8.0.18
--- PHP Version: 7.3.12
+-- Host: 127.0.0.1
+-- Generation Time: Jun 24, 2021 at 10:32 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -28,9 +27,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `administrator`
 --
 
-DROP TABLE IF EXISTS `administrator`;
-CREATE TABLE IF NOT EXISTS `administrator` (
-  `ADMIN_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `administrator` (
+  `ADMIN_ID` int(11) NOT NULL,
   `ADMIN_NAME` varchar(50) NOT NULL,
   `ADMIN_EMAIL` varchar(50) NOT NULL,
   `ADMIN_CONTACT_1` varchar(10) NOT NULL,
@@ -39,9 +37,8 @@ CREATE TABLE IF NOT EXISTS `administrator` (
   `ADMIN_PASSWORD` varchar(50) NOT NULL,
   `ADMIN_PROFILE_PHOTO` varchar(200) NOT NULL,
   `ADMIN_USERNAME` varchar(50) NOT NULL,
-  `ADMIN_RECOVERY_PIN` varchar(6) NOT NULL,
-  PRIMARY KEY (`ADMIN_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+  `ADMIN_RECOVERY_PIN` varchar(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `administrator`
@@ -49,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `administrator` (
 
 INSERT INTO `administrator` (`ADMIN_ID`, `ADMIN_NAME`, `ADMIN_EMAIL`, `ADMIN_CONTACT_1`, `ADMIN_CONTACT_2`, `ADMIN_MESSAGE`, `ADMIN_PASSWORD`, `ADMIN_PROFILE_PHOTO`, `ADMIN_USERNAME`, `ADMIN_RECOVERY_PIN`) VALUES
 (1, 'Dhruv Dani', 'dhruvbdani@gmail.com', '9845213784', '9956784129', 'carpediam', 'dhruv', '/admin/admin_profile/sanctum-default.png', 'dhruv.admin', '45'),
-(2, 'Zena', 'zena@gmail.com', '9564789542', '9634257958', 'conspious', 'zena', '/admin/admin_profile/sanctum-default.png', 'Zena.admin', '50'),
+(2, 'Zena', 'zanetabhagwagar@gmail.com', '9564789542', '9634257958', 'conspious', 'zena', '/admin/admin_profile/sanctum-default.png', 'Zena.admin', '50'),
 (3, 'Nilay Thakkar', 'nilay2620@gmail.com', '9727945621', '9537505500', 'Hey There', 'nilay', '/admin/admin_profile/sanctum-default.png', 'Nilay.admin', '20');
 
 -- --------------------------------------------------------
@@ -58,9 +55,8 @@ INSERT INTO `administrator` (`ADMIN_ID`, `ADMIN_NAME`, `ADMIN_EMAIL`, `ADMIN_CON
 -- Table structure for table `client`
 --
 
-DROP TABLE IF EXISTS `client`;
-CREATE TABLE IF NOT EXISTS `client` (
-  `CLIENT_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `client` (
+  `CLIENT_ID` int(11) NOT NULL,
   `CLIENT_NAME` varchar(50) NOT NULL,
   `CLIENT_EMAIL` varchar(50) NOT NULL,
   `CLIENT_CONTACT` varchar(10) NOT NULL,
@@ -68,9 +64,8 @@ CREATE TABLE IF NOT EXISTS `client` (
   `CLIENT_STATUS` tinyint(1) NOT NULL,
   `CLIENT_PROFILE_PHOTO` varchar(200) NOT NULL,
   `CLIENT_SANCTUM_TOKEN` int(11) NOT NULL,
-  `CLIENT_TOTAL_SCORE` bigint(20) NOT NULL,
-  PRIMARY KEY (`CLIENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
+  `CLIENT_TOTAL_SCORE` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `client`
@@ -87,7 +82,7 @@ INSERT INTO `client` (`CLIENT_ID`, `CLIENT_NAME`, `CLIENT_EMAIL`, `CLIENT_CONTAC
 (8, 'shruti amrute', 'shramru@gmail.com', '9865454641', 'shruti564amrute', 1, '/client/client_images/sanctum-default.png', 2500, 2100),
 (9, 'mansi chiplunkar', 'mansi@gmail.com', '9995474641', 'mansichip', 1, '/client/client_images/sanctum-default.png', 1000, 21600),
 (10, 'komal rathi', 'rathi@gmail.com', '9564111234', 'komalgovind', 1, '/client/client_images/sanctum-default.png', 3500, 21300),
-(11, 'pathik patel', 'pathik@gmail.com', '9564278165', 'pathik', 1, '/client/client_images/sanctum-default.png', 5000, 0),
+(11, 'pathik patel', 'pathik@gmail.com', '9564278165', 'pathik', 1, '/client/client_images/sanctum-default.png', 5700, 0),
 (12, 'Jaitra Patel', 'jaitra@gmail.com', '9854781165', 'jaitra@1', 1, '/client/client_images/sanctum-default.png', 2000, 6800),
 (13, 'nafiya', 'nafi@gmail.com', '9564278956', 'naf', 1, '/client/client_images/sanctum-default.png', 1200, 0),
 (14, 'fairy bhat', 'fairy@gmail.com', '9851915484', 'fairy', 1, '/client/client_images/sanctum-default.png', 2300, 4000),
@@ -105,16 +100,14 @@ INSERT INTO `client` (`CLIENT_ID`, `CLIENT_NAME`, `CLIENT_EMAIL`, `CLIENT_CONTAC
 -- Table structure for table `feedback`
 --
 
-DROP TABLE IF EXISTS `feedback`;
-CREATE TABLE IF NOT EXISTS `feedback` (
-  `FEEDBACK_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `feedback` (
+  `FEEDBACK_ID` int(11) NOT NULL,
   `FEEDBACK_NAME` varchar(50) NOT NULL,
   `FEEDBACK_EMAIL` varchar(50) NOT NULL,
   `FEEDBACK_CONTACT` varchar(20) NOT NULL,
   `FEEDBACK_MESSAGE` text NOT NULL,
-  `FEEDBACK_TIME` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`FEEDBACK_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+  `FEEDBACK_TIME` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `feedback`
@@ -133,16 +126,14 @@ INSERT INTO `feedback` (`FEEDBACK_ID`, `FEEDBACK_NAME`, `FEEDBACK_EMAIL`, `FEEDB
 -- Table structure for table `game`
 --
 
-DROP TABLE IF EXISTS `game`;
-CREATE TABLE IF NOT EXISTS `game` (
-  `GAME_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `game` (
+  `GAME_ID` int(11) NOT NULL,
   `GAME_NAME` varchar(50) NOT NULL,
   `GAME_STATUS` tinyint(1) NOT NULL,
   `GAME_DESCRIPTION` text NOT NULL,
   `GAME_PROFILE_IMAGE` varchar(200) NOT NULL,
-  `GAME_CATEGORY` varchar(50) NOT NULL,
-  PRIMARY KEY (`GAME_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+  `GAME_CATEGORY` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `game`
@@ -160,16 +151,12 @@ INSERT INTO `game` (`GAME_ID`, `GAME_NAME`, `GAME_STATUS`, `GAME_DESCRIPTION`, `
 -- Table structure for table `registration`
 --
 
-DROP TABLE IF EXISTS `registration`;
-CREATE TABLE IF NOT EXISTS `registration` (
-  `REGISTRATION_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `registration` (
+  `REGISTRATION_ID` int(11) NOT NULL,
   `CLIENT_ID` int(11) NOT NULL,
   `TOURNAMENT_ID` int(11) NOT NULL,
-  `REGISTRATION_DATE` date NOT NULL,
-  PRIMARY KEY (`REGISTRATION_ID`),
-  KEY `CLIENT_ID` (`CLIENT_ID`),
-  KEY `TOURNAMENT_ID` (`TOURNAMENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4;
+  `REGISTRATION_DATE` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `registration`
@@ -187,23 +174,19 @@ INSERT INTO `registration` (`REGISTRATION_ID`, `CLIENT_ID`, `TOURNAMENT_ID`, `RE
 (9, 3, 3, '2021-03-11'),
 (10, 3, 5, '2021-05-08'),
 (11, 3, 6, '2021-06-01'),
-(12, 3, 7, '2021-07-12'),
 (13, 4, 6, '2021-06-09'),
 (14, 4, 1, '2021-01-12'),
 (15, 4, 3, '2021-03-08'),
-(16, 4, 7, '2021-07-04'),
 (17, 5, 3, '2021-03-10'),
 (18, 5, 2, '2021-02-08'),
 (19, 5, 4, '2021-04-12'),
 (20, 6, 2, '2021-02-12'),
 (21, 6, 5, '2021-05-13'),
 (26, 7, 5, '2021-05-12'),
-(27, 8, 7, '2021-07-10'),
 (28, 8, 2, '2021-02-09'),
 (29, 9, 1, '2021-01-07'),
 (30, 9, 2, '2021-02-05'),
 (31, 9, 4, '2021-04-12'),
-(32, 9, 7, '2021-07-12'),
 (33, 10, 2, '2021-02-13'),
 (34, 10, 3, '2021-03-14'),
 (36, 12, 4, '2021-04-13'),
@@ -211,7 +194,6 @@ INSERT INTO `registration` (`REGISTRATION_ID`, `CLIENT_ID`, `TOURNAMENT_ID`, `RE
 (38, 14, 1, '2021-01-10'),
 (39, 14, 6, '2021-06-09'),
 (40, 15, 6, '2021-06-09'),
-(41, 16, 7, '2021-07-08'),
 (42, 16, 1, '2021-01-11'),
 (43, 16, 5, '2021-05-12'),
 (44, 16, 3, '2021-03-12'),
@@ -233,17 +215,13 @@ INSERT INTO `registration` (`REGISTRATION_ID`, `CLIENT_ID`, `TOURNAMENT_ID`, `RE
 -- Table structure for table `result`
 --
 
-DROP TABLE IF EXISTS `result`;
-CREATE TABLE IF NOT EXISTS `result` (
-  `RESULT_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `result` (
+  `RESULT_ID` int(11) NOT NULL,
   `TOURNAMENT_ID` int(11) NOT NULL,
   `CLIENT_ID` int(11) NOT NULL,
   `REWARD_STATUS` tinyint(4) NOT NULL,
-  `POSITION` int(11) NOT NULL,
-  PRIMARY KEY (`RESULT_ID`),
-  KEY `CLIENT_ID` (`CLIENT_ID`),
-  KEY `TOURNAMENT_ID` (`TOURNAMENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+  `POSITION` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `result`
@@ -263,18 +241,13 @@ INSERT INTO `result` (`RESULT_ID`, `TOURNAMENT_ID`, `CLIENT_ID`, `REWARD_STATUS`
 -- Table structure for table `scoreboard`
 --
 
-DROP TABLE IF EXISTS `scoreboard`;
-CREATE TABLE IF NOT EXISTS `scoreboard` (
-  `SCOREBOARD_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `scoreboard` (
+  `SCOREBOARD_ID` int(11) NOT NULL,
   `CLIENT_ID` int(11) NOT NULL,
   `GAME_ID` int(11) NOT NULL,
   `TOURNAMENT_ID` int(11) NOT NULL,
-  `SCORE_TOTAL` int(11) NOT NULL,
-  PRIMARY KEY (`SCOREBOARD_ID`),
-  KEY `CLIENT_ID` (`CLIENT_ID`),
-  KEY `GAME_ID` (`GAME_ID`),
-  KEY `TOURNAMENT_ID` (`TOURNAMENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8mb4;
+  `SCORE_TOTAL` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `scoreboard`
@@ -356,9 +329,8 @@ INSERT INTO `scoreboard` (`SCOREBOARD_ID`, `CLIENT_ID`, `GAME_ID`, `TOURNAMENT_I
 -- Table structure for table `tournament`
 --
 
-DROP TABLE IF EXISTS `tournament`;
-CREATE TABLE IF NOT EXISTS `tournament` (
-  `TOURNAMENT_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tournament` (
+  `TOURNAMENT_ID` int(11) NOT NULL,
   `TOURNAMENT_NAME` varchar(50) NOT NULL,
   `TOURNAMENT_START` date NOT NULL,
   `TOURNAMENT_END` date NOT NULL,
@@ -370,9 +342,8 @@ CREATE TABLE IF NOT EXISTS `tournament` (
   `TOURNAMENT_SECOND_PRIZE` int(11) NOT NULL,
   `TOURNAMENT_THIRD_PRIZE` int(11) NOT NULL,
   `TOURNAMENT_TREMS` text NOT NULL,
-  `TOURNAMENT_REGISTRATION_TILL` date NOT NULL,
-  PRIMARY KEY (`TOURNAMENT_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+  `TOURNAMENT_REGISTRATION_TILL` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tournament`
@@ -386,6 +357,117 @@ INSERT INTO `tournament` (`TOURNAMENT_ID`, `TOURNAMENT_NAME`, `TOURNAMENT_START`
 (5, 'May Season', '2021-05-01', '2021-05-31', 1, 4, 1400, 'This tournament is specially for kids to have fun in summer vacation', 3000, 2000, 1000, 'you must register yourself before last registration date.', '2021-05-01'),
 (6, 'June Season', '2021-06-01', '2021-06-30', 1, 7, 2800, 'This tournament is designed so that various players can compete with each other.\r\n', 4000, 3500, 3000, 'you must register yourself before last registration date.', '2021-06-01'),
 (7, 'July Season', '2021-07-01', '2021-07-31', 1, 3, 2400, 'This tournament is designed so that various players can compete with each other.\r\n', 3500, 2000, 1000, 'you must register yourself before last registration date.', '2021-07-01');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `administrator`
+--
+ALTER TABLE `administrator`
+  ADD PRIMARY KEY (`ADMIN_ID`);
+
+--
+-- Indexes for table `client`
+--
+ALTER TABLE `client`
+  ADD PRIMARY KEY (`CLIENT_ID`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`FEEDBACK_ID`);
+
+--
+-- Indexes for table `game`
+--
+ALTER TABLE `game`
+  ADD PRIMARY KEY (`GAME_ID`);
+
+--
+-- Indexes for table `registration`
+--
+ALTER TABLE `registration`
+  ADD PRIMARY KEY (`REGISTRATION_ID`),
+  ADD KEY `CLIENT_ID` (`CLIENT_ID`),
+  ADD KEY `TOURNAMENT_ID` (`TOURNAMENT_ID`);
+
+--
+-- Indexes for table `result`
+--
+ALTER TABLE `result`
+  ADD PRIMARY KEY (`RESULT_ID`),
+  ADD KEY `CLIENT_ID` (`CLIENT_ID`),
+  ADD KEY `TOURNAMENT_ID` (`TOURNAMENT_ID`);
+
+--
+-- Indexes for table `scoreboard`
+--
+ALTER TABLE `scoreboard`
+  ADD PRIMARY KEY (`SCOREBOARD_ID`),
+  ADD KEY `CLIENT_ID` (`CLIENT_ID`),
+  ADD KEY `GAME_ID` (`GAME_ID`),
+  ADD KEY `TOURNAMENT_ID` (`TOURNAMENT_ID`);
+
+--
+-- Indexes for table `tournament`
+--
+ALTER TABLE `tournament`
+  ADD PRIMARY KEY (`TOURNAMENT_ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `administrator`
+--
+ALTER TABLE `administrator`
+  MODIFY `ADMIN_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `client`
+--
+ALTER TABLE `client`
+  MODIFY `CLIENT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `FEEDBACK_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `game`
+--
+ALTER TABLE `game`
+  MODIFY `GAME_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `registration`
+--
+ALTER TABLE `registration`
+  MODIFY `REGISTRATION_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+
+--
+-- AUTO_INCREMENT for table `result`
+--
+ALTER TABLE `result`
+  MODIFY `RESULT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `scoreboard`
+--
+ALTER TABLE `scoreboard`
+  MODIFY `SCOREBOARD_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+
+--
+-- AUTO_INCREMENT for table `tournament`
+--
+ALTER TABLE `tournament`
+  MODIFY `TOURNAMENT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
